@@ -1,3 +1,20 @@
-﻿  WQHcompilerMain.cpp
+﻿  Log.cpp
+  Parser.cpp
+  StateMent.cpp
+  Token.cpp
+C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Token.cpp(132,39): warning C4244: “=”: 从“__int64”转换到“char”，可能丢失数据
+  VM.cpp
+C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp(66,38): warning C4477: “fprintf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“__int64”
+  C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp(66,38):
+  请考虑在格式字符串中使用“%lld”
+  C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp(66,38):
+  请考虑在格式字符串中使用“%Id”
+  C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp(66,38):
+  请考虑在格式字符串中使用“%I64d”
+  
+C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp(88,46): warning C4244: “=”: 从“__int64”转换到“char”，可能丢失数据
+C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp(140,71): warning C4244: “参数”: 从“__int64”转换到“int”，可能丢失数据
+  WQHcompilerMain.cpp
 C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\WQHcompilerMain.cpp(56,25): warning C4244: “return”: 从“__int64”转换到“int32_t”，可能丢失数据
+  正在生成代码...
   WQHcompiler.vcxproj -> C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHcompiler.exe

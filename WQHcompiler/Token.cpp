@@ -18,19 +18,19 @@ void TokensClass::next()
             // 调试模式下，如果生成了代码的话，按行打印出中间生成的代码
             if (_testVM.debug && (_testVM.last_code <= _testVM.code))
             {
-                LOG(ERROR, "line %d:\n", line);
+				fprintf(compiler_file, "line %lld:\n", line);
                 while (_testVM.last_code <= _testVM.code)
                 {
                     op = *(_testVM.last_code);
-                    LOG(DEBUG, "0x%.10X: %.4s", (long long)(_testVM.last_code)++, &"LEA ,IMM ,JMP ,JSR ,JZ  ,JNZ ,ENT ,ADJ ,LEV ,LI  ,LC  ,SI  ,SC  ,PUSH,"
-                        "OR  ,XOR ,AND ,EQ  ,NE  ,LT  ,GT  ,LE  ,GE  ,SHL ,SHR ,ADD ,SUB ,MUL ,DIV ,MOD ,"
-                        "OPEN,READ,CLOS,WRIT,PRTF,MALC,FREE,MSET,MCMP,MCPY,EXIT,"[(op - LEA) * 5]);
+					fprintf(compiler_file, "0x%.10llX: %.4s", (long long)(_testVM.last_code)++, &"LEA ,IMM ,JMP ,JSR ,JZ  ,JNZ ,ENT ,ADJ ,LEV ,LI  ,LC  ,SI  ,SC  ,PUSH,"
+						"OR  ,XOR ,AND ,EQ  ,NE  ,LT  ,GT  ,LE  ,GE  ,SHL ,SHR ,ADD ,SUB ,MUL ,DIV ,MOD ,"
+						"OPEN,READ,CLOS,WRIT,PRTF,MALC,FREE,MSET,MCMP,MCPY,EXIT,"[(op - LEA) * 5]);
                     if (op >= JMP && op <= JNZ)
-                        LOG(ERROR, "0x%.10X\n", *_testVM.last_code++);
+					fprintf(compiler_file, "0x%.10llX\n", *_testVM.last_code++);
                     else if (op <= ADJ)
-                        LOG(ERROR, "%d\n", *_testVM.last_code++);
+                    fprintf(compiler_file, "%lld\n", *_testVM.last_code++);
                     else
-                        LOG(ERROR, "\n");
+                    fprintf(compiler_file, "\n");
                 }
                 _testVM.last_code = _testVM.code + 1;
             }
@@ -198,6 +198,7 @@ void TokensClass::next()
 TokensClass::TokensClass(VM& testVM, Parser* parserptr)
     :_testVM(testVM)
     , _parserptr(parserptr)
+    ,compiler_file(fopen("compile_record.txt", "a"))
 {}
 /*
 检查下一个token是否是某种特定类型，不匹配报错退出。
@@ -263,6 +264,11 @@ void TokensClass::match(long long tk)
         {
             LOG(ERROR, "%d: expected token : '%c'\n", line, tk);
         }
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
+}
+TokensClass::~TokensClass()
+{
+    fprintf(compiler_file, "\n");
+    fclose(compiler_file);
 }

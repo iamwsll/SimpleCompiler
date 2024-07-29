@@ -280,7 +280,7 @@ void StateMent::statement()
         if (!_parserptr->cur_loop)
         {
             LOG(ERROR, "%d: invalid break statement, not in a loop\n", _parserptr->TokenOp.line);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
         _parserptr->TokenOp.match(Break);
         _parserptr->TokenOp.match(';');
@@ -298,7 +298,7 @@ void StateMent::statement()
         if (!_parserptr->cur_loop)
         {
             LOG(ERROR, "%d: invalid continue statement, not in a loop\n", _parserptr->TokenOp.line);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
         _parserptr->TokenOp.match(Continue);
         _parserptr->TokenOp.match(';');
@@ -371,12 +371,12 @@ void StateMent::statement()
                 if (id->IdClass >= EnumVal && id->IdClass < Label)
                 {
                     LOG(ERROR, "%d: label can not have a same name with types, global vars, local vars, functions, system calls, and enum values\n", _parserptr->TokenOp.line);
-                    exit(-1);
+                    std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                 }
                 else if (id->IdClass == Label)
                 {
                     LOG(ERROR, "%d: labels can not have same name\n", _parserptr->TokenOp.line);
-                    exit(-1);
+                    std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                 }
 
                 // 定义一个新的标号
@@ -387,7 +387,7 @@ void StateMent::statement()
                 if (_parserptr->TokenOp.token == '}')
                 {
                     LOG(ERROR, "%d: there must a statement after a label, please add a ';'\n", _parserptr->TokenOp.line);
-                    exit(-1);
+                    std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                 }
                 statement();
                 _parserptr->cur_loop = tmp_loop;
@@ -474,7 +474,7 @@ void StateMent::expression(long long level)
         if (_parserptr->expr_type == -1)
         {
             LOG(ERROR, "%d: invalid type in sizeof()\n", _parserptr->TokenOp.line);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
 
         while (_parserptr->TokenOp.token == Mul)
@@ -497,7 +497,7 @@ void StateMent::expression(long long level)
                 if (_parserptr->struct_symbols_list[_parserptr->expr_type - STRUCT].next == 0)
                 {
                     LOG(ERROR, "%d: can not get size of undefined struct type\n", _parserptr->TokenOp.line);
-                    exit(-1);
+                    std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                 }
                 *++_parserptr->TokenOp._testVM.code = _parserptr->struct_symbols_list[_parserptr->expr_type - STRUCT].size;
             }
@@ -506,7 +506,7 @@ void StateMent::expression(long long level)
                 if (_parserptr->union_symbols_list[_parserptr->expr_type - UNION].next == 0)
                 {
                     LOG(ERROR, "%d: can not get size of undefined union type\n", _parserptr->TokenOp.line);
-                    exit(-1);
+                    std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                 }
                 *++_parserptr->TokenOp._testVM.code = _parserptr->union_symbols_list[_parserptr->expr_type - UNION].size;
             }
@@ -541,7 +541,7 @@ void StateMent::expression(long long level)
                     if (_parserptr->TokenOp.token == ')')
                     {
                         LOG(ERROR, "%d: expected expression after ','\n", _parserptr->TokenOp.line);
-                        exit(-1);
+                        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                     }
                 }
             }
@@ -574,7 +574,7 @@ void StateMent::expression(long long level)
             else
             {
                 LOG(ERROR, "%d: call undeclared function\n", _parserptr->TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
 
             // 函数调用返回时，清理为参数分配的栈空间
@@ -613,7 +613,7 @@ void StateMent::expression(long long level)
             else
             {
                 LOG(ERROR, "%d: undefined variable\n", _parserptr->TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
 
             // 加载变量值到ax，地址已经由上面LEA或者IMM加载到了ax中
@@ -632,7 +632,7 @@ void StateMent::expression(long long level)
             if (tmp == -1)
             {
                 LOG(ERROR, "%d: invalid cast target type\n", _parserptr->TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
             while (_parserptr->TokenOp.token == Mul)
             {
@@ -643,7 +643,7 @@ void StateMent::expression(long long level)
             if (tmp < PTR && tmp >= UNION)
             {
                 LOG(ERROR, "%d: do not support struct/union be cast target type, please consider use pointer\n", _parserptr->TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
 
             _parserptr->TokenOp.match(')');
@@ -671,7 +671,7 @@ void StateMent::expression(long long level)
         else
         {
             LOG(ERROR, "%d: invalid dereference\n", _parserptr->TokenOp.line);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
         *++_parserptr->TokenOp._testVM.code = (_parserptr->expr_type == CHAR) ? LC : LI; // 如果是多重指针就是LI，加载地址到ax
     }
@@ -689,7 +689,7 @@ void StateMent::expression(long long level)
         else
         {
             LOG(ERROR, "%d: invalid operand for address operation\n", _parserptr->TokenOp.line);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
 
         _parserptr->expr_type = _parserptr->expr_type + PTR;
@@ -771,7 +771,7 @@ void StateMent::expression(long long level)
         else
         {
             LOG(ERROR, "%d: invalid lvalue for pre-increment", _parserptr->TokenOp.line);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
 
         *++_parserptr->TokenOp._testVM.code = PUSH;
@@ -783,7 +783,7 @@ void StateMent::expression(long long level)
     else
     {
         LOG(ERROR, "%d: invalid expression\n", _parserptr->TokenOp.line);
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
 
     // 处理二元运算符，不断向右扫描，直到遇到优先级小于当前优先级的运算符，参数level指定了当前的优先级
@@ -796,7 +796,7 @@ void StateMent::expression(long long level)
         if (_parserptr->expr_type >= UNION && _parserptr->expr_type < PTR && _parserptr->TokenOp.token >= Assign && _parserptr->TokenOp.token <= Brak)
         {
             LOG(ERROR, "%d: invalid operator for struct/union : %d\n", _parserptr->TokenOp.line, _parserptr->TokenOp.token);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
 
         // 逗号表达式，左结合，优先级最低
@@ -820,7 +820,7 @@ void StateMent::expression(long long level)
             else
             {
                 LOG(ERROR, "%d: invalid lvalue in assignment\n", _parserptr->TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
             expression(Assign);
 
@@ -841,7 +841,7 @@ void StateMent::expression(long long level)
             }
             else {
                 LOG(ERROR, "%d: missing colon in conditional\n", _parserptr->TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
             *addr = (long long)(_parserptr->TokenOp._testVM.code + 3);
             *++_parserptr->TokenOp._testVM.code = JMP;
@@ -1058,7 +1058,7 @@ void StateMent::expression(long long level)
             else
             {
                 LOG(ERROR, "%d: invlaid lvalue long long post ++/--\n", _parserptr->TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
 
             *++_parserptr->TokenOp._testVM.code = PUSH;
@@ -1089,7 +1089,7 @@ void StateMent::expression(long long level)
             else if (tmp < PTR) // 不是指针
             {
                 LOG(ERROR, "%d: pointer type expected for []\n", _parserptr->TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
             _parserptr->expr_type = tmp - PTR;
             *++_parserptr->TokenOp._testVM.code = ADD;
@@ -1109,7 +1109,7 @@ void StateMent::expression(long long level)
                 else
                 {
                     LOG(ERROR, "%d: invalid variable type for -> operator\n", _parserptr->TokenOp.line);
-                    exit(-1);
+                    std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                 }
             }
             // . 此时需要确保左边一定是左值
@@ -1123,7 +1123,7 @@ void StateMent::expression(long long level)
                 else
                 {
                     LOG(ERROR, "%d: invalid lvalue for operator .\n", _parserptr->TokenOp.line);
-                    exit(-1);
+                    std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                 }
             }
             _parserptr->TokenOp.match(_parserptr->TokenOp.token);
@@ -1132,13 +1132,13 @@ void StateMent::expression(long long level)
             if (_parserptr->expr_type >= PTR || _parserptr->expr_type < UNION)
             {
                 LOG(ERROR, "%d: invalid lvalue for operator .\n", _parserptr->TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
             // 结构体/联合体的域
             if (_parserptr->TokenOp.token != Id)
             {
                 LOG(ERROR, "%d: excepted member name after operator ./->\n", _parserptr->TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
             id = _parserptr->current_id;
             _parserptr->TokenOp.match(Id);
@@ -1156,7 +1156,7 @@ void StateMent::expression(long long level)
             if (!cur_node)
             {
                 LOG(ERROR, "%d: invalid member name for operator ./->, hash: %d\n", _parserptr->TokenOp.line, _parserptr->current_id->hash);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
 
             // 计算指针偏移，现在ax中保存结构体的地址，struct才需要偏移，union约定所有成员地址都和union本身一致，可以不做，struct第一个成员也可以不做
@@ -1174,7 +1174,7 @@ void StateMent::expression(long long level)
         else
         {
             LOG(ERROR, "%d: compiler error, token = %d\n", _parserptr->TokenOp.line, _parserptr->TokenOp.token);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
     }
 }

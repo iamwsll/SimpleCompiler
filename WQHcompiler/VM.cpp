@@ -6,20 +6,20 @@ VM::VM(long long input_poolsize)
     :poolsize(input_poolsize)
 {
     // 为VM分配内存
-    if (!(code = (long long*)malloc(poolsize)))
+    if (!(code = last_code = (long long*)malloc(poolsize)))
     {
         LOG(FATAL, "Could not malloc(%d) for code area\n", poolsize);
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
     if (!(data = (char*)malloc(poolsize)))
     {
         LOG(FATAL, "Could not malloc(%d) for data area\n", poolsize);
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
     if (!(stack = (long long*)malloc(poolsize)))
     {
         LOG(FATAL, "Could not malloc(%d) for stack area\n", poolsize);
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
     memset(code, 0, poolsize);
     memset(data, 0, poolsize);
@@ -32,7 +32,7 @@ void VM::init_run_VM(Parser* parserptr,int argc, char** argv)
     if (!(pc = (long long*) parserptr->idmain->value))
     {
         LOG(ERROR, "main() not defined\n");
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
 
     // 初始化VM寄存器，传递参数给main，main结束后执行PUSH和EXIT两条指令
@@ -43,6 +43,7 @@ void VM::init_run_VM(Parser* parserptr,int argc, char** argv)
     *--sp = argc;
     *--sp = (long long)argv;
     *--sp = (long long)tmpp;  // 返回地址，然后开始执行PUSH和EXIT
+
 }
 VM::~VM()
 {
@@ -53,21 +54,30 @@ long long VM::run_vm()
     auto run_start = std::chrono::high_resolution_clock::now();
     std::cout << "[###] process start running!" << std::endl << std::endl;
     long long op, * tmp;
+    FILE* file_record = fopen("running_code_record.txt", "a");
     while (1)
     {
         op = *pc++;
         cycle++;
         if (debug == 1)
         {
-            LOG(DEBUG,"%d> %.4s", cycle, &"LEA ,IMM ,JMP ,JSR ,JZ  ,JNZ ,ENT ,ADJ ,LEV ,LI  ,LC  ,SI  ,SC  ,PUSH,"
-                "OR  ,XOR ,AND ,EQ  ,NE  ,LT  ,GT  ,LE  ,GE  ,SHL ,SHR ,ADD ,SUB ,MUL ,DIV ,MOD ,"
-                "OPEN,READ,CLOS,WRIT,PRTF,MALC,FREE,MSET,MCMP,MCPY,EXIT,"[(op - LEA) * 5]);
-            if (op >= JMP && op <= JNZ)
-                LOG(ERROR, "0x%.10X\n", *pc);
-            else if (op <= ADJ)
-                LOG(ERROR, "%d\n", *pc);
-            else
-                LOG(ERROR, "\n");
+            if (file_record != NULL) 
+            {
+                fprintf(file_record, "%d >    %.4s", cycle, &"LEA ,IMM ,JMP ,JSR ,JZ  ,JNZ ,ENT ,ADJ ,LEV ,LI  ,LC  ,SI  ,SC  ,PUSH,"
+                    "OR  ,XOR ,AND ,EQ  ,NE  ,LT  ,GT  ,LE  ,GE  ,SHL ,SHR ,ADD ,SUB ,MUL ,DIV ,MOD ,"
+                    "OPEN,READ,CLOS,WRIT,PRTF,MALC,FREE,MSET,MCMP,MCPY,EXIT,"[(op - LEA) * 5]);
+                if (op >= JMP && op <= JNZ)
+                    fprintf(file_record, "0x%.10llX\n", *pc);
+                else if (op <= ADJ)
+                    fprintf(file_record, "%lld\n", *pc);
+                else
+                    fprintf(file_record, "\n");
+            }
+            else 
+            {
+                LOG(FATAL,"Error opening file_record");
+				std::cout << "[###] process error! please see in \"log.txt\" !" << std::endl; return(-1);
+            }
         }
 
         // load & store
@@ -131,7 +141,7 @@ long long VM::run_vm()
         else if (op == MCMP) ax = (long long)memcmp((char*)sp[2], (char*)sp[1], *sp); // (dest, val, size)
         else if (op == MCPY) ax = (long long)memcpy((char*)sp[2], (char*)sp[1], *sp); // (dest, src, count)
         else if (op == EXIT) {
-            LOG(DEBUG, "exit(%d), cycle = %d\n", *sp, cycle);
+            LOG(DEBUG, "exit(%d), running %d codes \n\n", *sp, cycle);
             std::cout << "\n[###] process exit successfully!,return val: " << *sp << std::endl;
             // 获取结束时间点
             auto run_end = std::chrono::high_resolution_clock::now();
@@ -141,9 +151,15 @@ long long VM::run_vm()
 
             // 输出运行时间（以秒为单位）
             std::cout << "[###] process run time:" << duration.count() << " s" << std::endl;
+            fprintf(file_record, "\n");
+            fclose(file_record);
             return *sp;
         }
-        else { LOG(ERROR, "unkown instruction = %d! cycle = %d\n", op, cycle); return -1; }
+        else { LOG(ERROR, "unkown instruction = %d! cycle = %d\n", op, cycle); 
+        std::cout << "[###] process error! please see in \"log.txt\" !" << std::endl;
+        fprintf(file_record, "\n");
+        fclose(file_record);
+        return -1; }
     }
     return 0;
 }

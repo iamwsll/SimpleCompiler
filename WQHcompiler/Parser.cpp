@@ -12,42 +12,42 @@ Parser::Parser(VM& testVM, long long input_poolsize)
     if (!(symbols = (struct Symbol_item*)malloc(poolsize)))
     {
         LOG(FATAL, "Could not malloc(%d) for symbol table\n", poolsize);
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
     if (!(break_list = (struct Bc_list_item*)malloc(sizeof(struct Bc_list_item) * 1024))) // 1024 unit
     {
         LOG(FATAL, "Could not malloc(%d) for break list of parser\n", 8 * 1024);
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
     if (!(continue_list = (struct Bc_list_item*)malloc(sizeof(struct Bc_list_item) * 1024))) // 1024 unit
     {
         LOG(FATAL, "Could not malloc(%d) for continue list of parser\n", sizeof(struct Bc_list_item) * 1024);
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
     if (!(label_list = (struct Label_list_item*)malloc(sizeof(struct Label_list_item) * 1024))) // 1024 unit
     {
         LOG(FATAL, "Could not malloc(%d) for label list for goto of parser\n", sizeof(struct Label_list_item) * 1024);
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
     if (!(func_list = (struct Func_call_item*)malloc(sizeof(struct Func_call_item) * 1024))) // 1024 unit
     {
         LOG(FATAL, "Could not malloc(%d) for function call list of parser\n", sizeof(struct Func_call_item) * 1024);
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
     if (!(struct_symbols_list = (struct us_domain*)malloc(sizeof(struct us_domain) * 1024))) // 1024 unit
     {
         LOG(FATAL, "Could not malloc(%d) for struct symbol list of parser\n", sizeof(struct us_domain) * 1024);
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
     if (!(union_symbols_list = (struct us_domain*)malloc(sizeof(struct us_domain) * 1024))) // 1024 unit
     {
         LOG(FATAL, "Could not malloc(%d) for union symbol list of parser\n", sizeof(struct us_domain) * 1024);
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
     if (!(us_domains_list = (struct us_domain*)malloc(sizeof(struct us_domain) * 4096))) // 4096 unit
     {
         LOG(FATAL, "Could not malloc(%d) for union and struct domains symbol info list of parser\n", sizeof(struct us_domain) * 4096);
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
     memset(symbols, 0, poolsize);
     memset(break_list, 0, sizeof(struct Bc_list_item) * 1024);
@@ -118,14 +118,14 @@ void Parser::read_src(char** argv)
     if ((fp = fopen(open_filename, "r")) == nullptr)
     {
         std::cout<<"Could not open(%s)"<<*argv<<std::endl;
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
 	LOG(DEBUG, "open file %s\n", *argv);
     if (!(TokenOp.src = (char*)malloc(poolsize)))
     {
         LOG(FATAL, "Could not malloc(%d) for source code area\n", poolsize);
         fclose(fp);
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
 
     memset(TokenOp.src, 0, poolsize);
@@ -135,7 +135,7 @@ void Parser::read_src(char** argv)
         LOG(FATAL, "fread() returned %zu\n", tmp);
         free(TokenOp.src);
         fclose(fp);
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
 
     fclose(fp);
@@ -208,7 +208,7 @@ void Parser::parse()
         if (!find_func)
         {
             LOG(ERROR, "%d: call declared but undefined function\n", func_list_pos->line);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
         func_list_pos->hash = 0;
         func_list_pos->line = 0;
@@ -265,7 +265,7 @@ void Parser::global_declaration()
             else
             {
                 LOG(ERROR, "%d: known identifier can not be new enum name in definition\n", TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
         }
         // 匿名enum定义
@@ -312,7 +312,7 @@ void Parser::global_declaration()
                 else if (TokenOp.token != ';')
                 {
                     LOG(ERROR, "%d: invalid struct definition or forward declaration\n", TokenOp.line);
-                    exit(-1);
+                    std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                 }
                 // else ;前向声明
             }
@@ -326,7 +326,7 @@ void Parser::global_declaration()
                     if (struct_symbols_list[id->type - STRUCT].next != 0)
                     {
                         LOG(ERROR, "%d: duplicate struct definition\n", TokenOp.line);
-                        exit(-1);
+                        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                     }
                     // 没有定义过那就解析定义
                     else
@@ -348,13 +348,13 @@ void Parser::global_declaration()
             else
             {
                 LOG(ERROR, "%d: known identifier can not be new struct name in definition\n", TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
         }
         else
         {
             LOG(ERROR, "%d: invalid use of keyword struct, must be with an identifier\n", TokenOp.line);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
         TokenOp.match(';');
         return;
@@ -393,7 +393,7 @@ void Parser::global_declaration()
                 else if (TokenOp.token != ';')
                 {
                     LOG(ERROR, "%d: invalid struct definition or forward declaration\n", TokenOp.line);
-                    exit(-1);
+                    std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                 }
                 // else ;前向声明
             }
@@ -407,7 +407,7 @@ void Parser::global_declaration()
                     if (union_symbols_list[id->type - UNION].next != 0)
                     {
                         LOG(ERROR, "%d: duplicate union definition\n", TokenOp.line);
-                        exit(-1);
+                        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                     }
                     // 没有定义过那就解析定义
                     else
@@ -429,13 +429,13 @@ void Parser::global_declaration()
             else
             {
                 LOG(ERROR, "%d: known identifier can not be new union name in definition\n", TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
         }
         else
         {
             LOG(ERROR, "%d: invalid use of struct, must with an identifier\n", TokenOp.line);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
         TokenOp.match(';');
         return;
@@ -467,7 +467,7 @@ define_glo_func:
         if (TokenOp.token != Id)
         {
             LOG(ERROR, "%d: invalid global declaration\n", TokenOp.line);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
         id = current_id;
         TokenOp.match(Id);
@@ -479,7 +479,7 @@ define_glo_func:
             if (type < PTR && type >= UNION)
             {
                 LOG(ERROR, "%d: do not support struct/union to be type of function return value, please use pointer instead\n", TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
 
             // 缓存当前符号表项
@@ -500,13 +500,13 @@ define_glo_func:
                     if (cur_func.IdClass != Fun)
                     {
                         LOG(ERROR, "%d: duplicate global declaration, identifier has been used\n", TokenOp.line);
-                        exit(-1);
+                        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                     }
                     // 已经声明或者定义为函数，但返回值不同
                     else if (cur_func.type != type)
                     {
                         LOG(ERROR, "%d: invalid function declaration, different return type\n", TokenOp.line);
-                        exit(-1);
+                        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                     }
                     // 已经声明或定义为函数，还原为缓存项
                     else
@@ -530,19 +530,19 @@ define_glo_func:
                     if (cur_func.IdClass != Fun)
                     {
                         LOG(ERROR, "%d: duplicate global declaration, identifier has been used\n", TokenOp.line);
-                        exit(-1);
+                        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                     }
                     // 同名函数已经定义
                     else if (cur_func.value)
                     {
                         LOG(ERROR, "%d: redefinition of function\n", TokenOp.line);
-                        exit(-1);
+                        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                     }
                     // 未定义，返回值和声明不同
                     else if (cur_func.type != type)
                     {
                         LOG(ERROR, "%d: invalid function definition, different return type with declaration\n", TokenOp.line);
-                        exit(-1);
+                        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                     }
                     // else 和声明匹配并且第一次定义，已经定义
                 }
@@ -555,7 +555,7 @@ define_glo_func:
             if (id->IdClass)
             {
                 LOG(ERROR, "%d: duplicate global declaration, identifier has been used\n", TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
             id->IdClass = Glo;
             id->type = type;
@@ -586,7 +586,7 @@ define_glo_func:
                 if (TokenOp.token == ';')
                 {
                     LOG(ERROR, "%d: expected identifier after ','\n", TokenOp.line);
-                    exit(-1);
+                    std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                 }
             }
         }
@@ -606,7 +606,7 @@ void Parser::enum_body()
         if (TokenOp.token != Id)
         {
             LOG(ERROR, "%d: invalid enum identifier %d\n", TokenOp.line, TokenOp.token);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
         TokenOp.next();
         if (TokenOp.token == Assign)
@@ -615,7 +615,7 @@ void Parser::enum_body()
             if (TokenOp.token != Num)
             {
                 LOG(ERROR, "%d: invalid enum initializer\n", TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
             enum_val = TokenOp.token_val;
             TokenOp.next();
@@ -679,7 +679,7 @@ long long Parser::function_declaration()
         if (!find_label)
         {
             LOG(ERROR, "%d: undefined label for goto in function, hash: %d\n", label_list_pos->line, label_list_pos->label_hash);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
         // 填充完后依次清空goto列表
         label_list_pos->label_hash = 0;
@@ -731,7 +731,7 @@ void Parser::struct_union_body(long long su_type, long long struct_or_union)
     if (TokenOp.token == '}')
     {
         LOG(ERROR, "%d: struct/union definition can not be empty\n", TokenOp.line);
-        exit(-1);
+        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
 
     while (TokenOp.token != '}')
@@ -741,7 +741,7 @@ void Parser::struct_union_body(long long su_type, long long struct_or_union)
         if (domain_type == -1)
         {
             LOG(ERROR, "%d: invalid type in struct/union definition\n", TokenOp.line);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
 
         // 指针
@@ -771,7 +771,7 @@ void Parser::struct_union_body(long long su_type, long long struct_or_union)
                 if (struct_symbols_list[domain_type - STRUCT].next == 0)
                 {
                     LOG(ERROR, "%d: incomplete struct type can not be member of struct/union\n", TokenOp.line);
-                    exit(-1);
+                    std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                 }
                 else
                 {
@@ -784,7 +784,7 @@ void Parser::struct_union_body(long long su_type, long long struct_or_union)
                 if (union_symbols_list[domain_type - UNION].next == 0)
                 {
                     LOG(ERROR, "%d: incomplete union type can not be member of struct/union\n", TokenOp.line);
-                    exit(-1);
+                    std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                 }
                 else
                 {
@@ -794,7 +794,7 @@ void Parser::struct_union_body(long long su_type, long long struct_or_union)
             else
             {
                 LOG(ERROR, "%d: invalid type in struct/union definition\n", TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
         }
 
@@ -809,7 +809,7 @@ void Parser::struct_union_body(long long su_type, long long struct_or_union)
                     if (cur_node->hash == current_id->hash)
                     {
                         LOG(ERROR, "%d: struct/union member redefinition\n", TokenOp.line);
-                        exit(-1);
+                        std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                     }
                 }
 
@@ -830,7 +830,7 @@ void Parser::struct_union_body(long long su_type, long long struct_or_union)
             else
             {
                 LOG(ERROR, "%d: invalid variable declaration in struct/union definition\n", TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
 
             // struct累计偏移，union确定最大的成员
@@ -843,7 +843,7 @@ void Parser::struct_union_body(long long su_type, long long struct_or_union)
                 if (TokenOp.token == ';')
                 {
                     LOG(ERROR, "%d: invalid ',' before ';' in struct/union definition\n", TokenOp.line);
-                    exit(-1);
+                    std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                 }
             }
         }
@@ -937,12 +937,12 @@ void Parser::function_body()
             if (TokenOp.token != Id)
             {
                 LOG(ERROR, "%d: invalid local declaration\n", TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
             if (current_id->IdClass == Loc)
             {
                 LOG(ERROR, "%d: duplicate local declaration\n", TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
             TokenOp.match(Id);
 
@@ -982,7 +982,7 @@ void Parser::function_body()
                 if (TokenOp.token == ';')
                 {
                     LOG(ERROR, "%d: expected identifier after ','\n", TokenOp.line);
-                    exit(-1);
+                    std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                 }
             }
         }
@@ -1031,20 +1031,20 @@ void Parser::function_parameter()
         if (type < PTR && type >= UNION)
         {
             LOG(ERROR, "%d: do not support struct/union to be type of function paramter, please use pointer instead\n", TokenOp.line);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
 
         // 参数名称
         if (TokenOp.token != Id)
         {
             LOG(ERROR, "%d: invalid parameter declaration\n", TokenOp.line);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
         // 已经定义同名局部变量
         else if (current_id->IdClass == Loc)
         {
             LOG(ERROR, "%d: duplicate parameter declaration\n", TokenOp.line);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
         TokenOp.match(Id);
 
@@ -1065,7 +1065,7 @@ void Parser::function_parameter()
             if (TokenOp.token == ')')
             {
                 LOG(ERROR, "%d: expected identifier after ','\n", TokenOp.line);
-                exit(-1);
+                std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
         }
     }
@@ -1108,7 +1108,7 @@ long long Parser::parse_type()
         else
         {
             LOG(ERROR, "%d: unknown enum type\n", TokenOp.line);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
     }
     // 自定义 struct
@@ -1123,7 +1123,7 @@ long long Parser::parse_type()
         else
         {
             LOG(ERROR, "%d: unknown struct type\n", TokenOp.line);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
     }
     // 自定义 union
@@ -1138,7 +1138,7 @@ long long Parser::parse_type()
         else
         {
             LOG(ERROR, "%d: unknown union type\n", TokenOp.line);
-            exit(-1);
+            std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
     }
     return type;

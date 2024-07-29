@@ -10,3 +10,20 @@ exit(0), cycle = 116337
 open file C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHcompiler.exe
 [2024-7-29 14:52:33][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][134] 
 exit(0), cycle = 116337
+[2024-7-29 15:1:35][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHcompiler.exe
+[2024-7-29 15:1:35][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][134] 
+exit(0), cycle = 116337
+[2024-7-29 15:3:26][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHcompiler.exe
+[2024-7-29 15:3:26][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][134] 
+exit(0), cycle = 116337
+[2024-7-29 15:30:32][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHcompiler.exe
+[2024-7-29 15:30:32][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][135] 
+exit(0), cycle = 116337
+[2024-7-29 16:11:12][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHcompiler.exe
+[2024-7-29 16:11:12][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][144] 
+exit(0), running 116337 codes 
+
