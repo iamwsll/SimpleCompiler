@@ -6,7 +6,8 @@ VM::VM(long long input_poolsize)
     :poolsize(input_poolsize)
 {
     // 为VM分配内存
-    if (!(code = last_code = (long long*)malloc(poolsize)))
+    //直接操纵内存可以很方便的进行大小控制，以及一些类型的强制转换也会很方便
+    if (!(code = (long long*)malloc(poolsize)))
     {
         LOG(FATAL, "Could not malloc(%d) for code area\n", poolsize);
         std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
@@ -54,22 +55,22 @@ long long VM::run_vm()
     auto run_start = std::chrono::high_resolution_clock::now();
     std::cout << "[###] process start running!" << std::endl << std::endl;
     long long op, * tmp;
-    FILE* file_record = fopen("running_code_record.txt", "a");
+    FILE* file_record = fopen("running_code_record.txt", "w");
     while (1)
     {
         op = *pc++;
-        cycle++;
+        cycle++;//这个是记录跑了几条代码
         if (debug == 1)
         {
             if (file_record != NULL) 
             {
-                fprintf(file_record, "%d >    %.4s", cycle, &"LEA ,IMM ,JMP ,JSR ,JZ  ,JNZ ,ENT ,ADJ ,LEV ,LI  ,LC  ,SI  ,SC  ,PUSH,"
+                fprintf(file_record, "%lld >        %.4s", cycle, &"LEA ,IMM ,JMP ,JSR ,JZ  ,JNZ ,ENT ,ADJ ,LEV ,LI  ,LC  ,SI  ,SC  ,PUSH,"
                     "OR  ,XOR ,AND ,EQ  ,NE  ,LT  ,GT  ,LE  ,GE  ,SHL ,SHR ,ADD ,SUB ,MUL ,DIV ,MOD ,"
-                    "OPEN,READ,CLOS,WRIT,PRTF,MALC,FREE,MSET,MCMP,MCPY,EXIT,"[(op - LEA) * 5]);
+                    "OPEN,READ,CLOS,WRIT,PRTF,MALC,FREE,MSET,MCMP,MCPY,EXIT,"[(op - LEA) * 5]);//这个*5是注意到每个字符（包括逗号）刚好5个字符
                 if (op >= JMP && op <= JNZ)
-                    fprintf(file_record, "0x%.10llX\n", *pc);
+                    fprintf(file_record, "              0x%.10llX\n", *pc);
                 else if (op <= ADJ)
-                    fprintf(file_record, "%lld\n", *pc);
+                    fprintf(file_record, "              %lld\n", *pc);
                 else
                     fprintf(file_record, "\n");
             }
@@ -82,9 +83,9 @@ long long VM::run_vm()
 
         // load & store
         if (op == IMM) { ax = *pc++; }                      // load immediate to ax
-        else if (op == LEA) { ax = (long long)(bp + *pc++); }     // load address to ax
+        else if (op == LEA) { ax = (long long)(bp + *pc++); }  // load address to ax
         else if (op == LC) { ax = *(char*)ax; }             // load char to ax
-        else if (op == LI) { ax = *(long long*)ax; }              // load long long to ax
+        else if (op == LI) { ax = *(long long*)ax; }              // load ax中内容 to ax
         else if (op == SC) { *(char*)*sp++ = ax; }          // save char to address in stack top, then pop
         else if (op == SI) { *(long long*)*sp++ = ax; }           // save long long to address in stack top, then pop
         else if (op == PUSH) *--sp = ax;                    // push ax to stack top

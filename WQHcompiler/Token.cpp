@@ -8,10 +8,8 @@
 */
 void TokensClass::next()
 {
-    long long op;
     char* last_pos;
-    long long hash;
-    while (token = *src++)
+    while (token = *src++)//注意这里src在token前面一位
     {
         if (token == '\n')
         {
@@ -21,14 +19,14 @@ void TokensClass::next()
 				fprintf(compiler_file, "line %lld:\n", line);
                 while (_testVM.last_code <= _testVM.code)
                 {
-                    op = *(_testVM.last_code);
-					fprintf(compiler_file, "0x%.10llX: %.4s", (long long)(_testVM.last_code)++, &"LEA ,IMM ,JMP ,JSR ,JZ  ,JNZ ,ENT ,ADJ ,LEV ,LI  ,LC  ,SI  ,SC  ,PUSH,"
-						"OR  ,XOR ,AND ,EQ  ,NE  ,LT  ,GT  ,LE  ,GE  ,SHL ,SHR ,ADD ,SUB ,MUL ,DIV ,MOD ,"
+                    long long op = *(_testVM.last_code);
+					fprintf(compiler_file, "     0x%.10llX: %.4s", (long long)(_testVM.last_code)++, &"LEA ,IMM ,JMP ,JSR ,JZ  ,JNZ ,ENT ,ADJ ,LEV ,LI  ,LC  ,SI  ,SC  ,PUSH,"
+						"OR  ,XOR ,AND ,EQ  ,NE  ,LT  ,GT  ,LE  ,GE  ,SHL ,SHR ,ADD ,SUB ,MUL ,DIV ,MOD ,"//这个*5是注意到每个单词（包括逗号）刚好5个字符
 						"OPEN,READ,CLOS,WRIT,PRTF,MALC,FREE,MSET,MCMP,MCPY,EXIT,"[(op - LEA) * 5]);
                     if (op >= JMP && op <= JNZ)
-					fprintf(compiler_file, "0x%.10llX\n", *_testVM.last_code++);
+					fprintf(compiler_file, "          0x%.10llX\n", *_testVM.last_code++);//这里的数据是地址
                     else if (op <= ADJ)
-                    fprintf(compiler_file, "%lld\n", *_testVM.last_code++);
+                    fprintf(compiler_file, "          %lld\n", *_testVM.last_code++);//这里的数据就是一个数
                     else
                     fprintf(compiler_file, "\n");
                 }
@@ -44,11 +42,12 @@ void TokensClass::next()
                 src++;
             }
         }
-        // 标识符
+		// 标识符：关键字也算
         else if ((token >= 'a' && token <= 'z') || (token >= 'A' && token <= 'Z') || token == '_')
         {
+
             last_pos = src - 1;
-            hash = token;
+            long long hash = token;
             while ((*src >= 'a' && *src <= 'z') || (*src >= 'A' && *src <= 'Z') || *src == '_' || (*src >= '0' && *src <= '9'))
             {
                 hash = hash * 147 + *src; // 计算字符串的哈希值，用来唯一标识一个标识符，假定不会发生哈希冲突
@@ -56,7 +55,7 @@ void TokensClass::next()
             }
             // 查找已有标识符
             _parserptr->current_id = _parserptr->symbols;
-            while (_parserptr->current_id->token)
+            while (_parserptr->current_id&&_parserptr->current_id->token)
             {
                 if (_parserptr->current_id->hash == hash && !memcmp(_parserptr->current_id->name, last_pos, src - last_pos))
                 {
@@ -64,7 +63,7 @@ void TokensClass::next()
                     token = _parserptr->current_id->token;
                     return;
                 }
-                _parserptr->current_id++;
+                _parserptr->current_id++;//正是在这里，current_id始终保持了最新的状态。因此每调用一次next，都会更新它
             }
             // 在符号表中保存新的标识符
             token = _parserptr->current_id->token = Id;
@@ -93,6 +92,8 @@ void TokensClass::next()
                     token = *++src;
                     while ((token >= '0' && token <= '9') || (token >= 'a' && token <= 'f') || token >= 'A' && token <= 'F')
                     {
+                        // token & 15 计算字符对应的数值（0-9对应自身, A-F对应10-15）（奇妙的思路，from chatgpt）
+                        // 如果是大写字母或小写字母，再加上偏移值9
                         token_val = token_val * 16 + (token & 15) + (token >= 'A' ? 9 : 0); // '0'~48,'A'~65,'a'~97
                         token = *++src;
                     }
@@ -110,13 +111,13 @@ void TokensClass::next()
             token = Num;
             return;
         }
-        // 字符串和字符字面量，仅支持\n转义，其他转义暂时不进行支持，字面量将存储到data区
-        else if (token == '"' || token == '\'')
+        // 字符串和字符字面量，仅支持\n转义，其他转义暂时不进行支持(如果加了其他的，那么就相当于没加\)，字面量将存储到data区
+        else if (token == '"' || token == '\'')//两种引号分别表示字符和字符串
         {
             last_pos = _testVM.data;
             while (*src != 0 && *src != token)
             {
-                token_val = *src++;
+				token_val = *src++;//token_val是字符的ascii码
                 // 处理转义字符\n，不匹配\n的反斜杠忽略，直接表示其下一个字符
                 if (token_val == '\\')
                 {
@@ -128,19 +129,20 @@ void TokensClass::next()
                 }
 
                 if (token == '"')
-                {
-                    *_testVM.data++ = token_val; // 字符串末尾补\0不在这里做
+                {//这里会不断的往data里加字符
+                    *(long long*)_testVM.data++ = token_val; // 字符串末尾补\0不在这里做 
+                    //为了方便，我们直接存8字节的，这样方便处理
                 }
             }
 
             src++;
             if (token == '"')
             {
-                token_val = (long long)last_pos;
+				token_val = (long long)last_pos;//也就是字符串的起始地址，之前while循环里token_val只是一个辅助
             }
             else
             {
-                token = Num; // 字符常量视为整数
+				token = Num; // 字符常量视为整数  这时候while循环里的token才有意义，也就是字符的ascii码
             }
             return;
         }
@@ -198,7 +200,7 @@ void TokensClass::next()
 TokensClass::TokensClass(VM& testVM, Parser* parserptr)
     :_testVM(testVM)
     , _parserptr(parserptr)
-    ,compiler_file(fopen("compile_record.txt", "a"))
+    ,compiler_file(fopen("compile_record.txt", "w"))
 {}
 /*
 检查下一个token是否是某种特定类型，不匹配报错退出。
@@ -258,7 +260,7 @@ void TokensClass::match(long long tk)
             "Gmbp    ";
         if (tk >= Num)
         {
-            LOG(ERROR, "%d: expected token : %.8s\n", line, &tokens[8 * (tk - Num)]);
+            LOG(ERROR, "%d: expected token : %.8s\n", line, &tokens[8 * (tk - Num)]);//这个8跟之前的5一样的，都是巧妙地实现了对齐
         }
         else
         {

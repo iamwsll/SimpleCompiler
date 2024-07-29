@@ -1,0 +1,846 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "取消对 NULL 指针“cur_node”的引用。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                },
+                "region": {
+                  "startLine": 843,
+                  "startColumn": 50,
+                  "endLine": 843,
+                  "endColumn": 58
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Parser::struct_union_body",
+                  "decoratedName": "?struct_union_body@Parser@@QEAAX_J0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 743,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 744,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 745,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 746,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 748,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 749,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 750,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 752,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 753,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 754,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 755,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 757,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 763,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 766,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 767,
+                            "startColumn": 25
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 774,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 782,
+                            "startColumn": 33
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 787,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 795,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 808,
+                            "startColumn": 34
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 810,
+                            "startColumn": 66
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 817,
+                            "startColumn": 33
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 827,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 829,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 832,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 832,
+                            "startColumn": 54
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 835,
+                            "startColumn": 40
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 832,
+                            "startColumn": 73
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 832,
+                            "startColumn": 54
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 843,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 843,
+                            "startColumn": 58
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 844,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 845,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 846,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 847,
+                            "startColumn": 34
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 848,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 851,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 852,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 854,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 863,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 864,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 866,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 868,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 869,
+                            "startColumn": 35
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 827,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 829,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 832,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 832,
+                            "startColumn": 54
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 843,
+                            "startColumn": 31
+                          }
+                        },
+                        "message": {
+                          "text": "“cur_node”可能为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 843,
+                            "startColumn": 58
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此循环(假定“cur_node->hash”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+                          },
+                          "region": {
+                            "startLine": 843,
+                            "startColumn": 58
+                          }
+                        },
+                        "message": {
+                          "text": "已取消对“cur_node”的引用，但可能仍为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.39.33523.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/my_program/SimpleCompiler/SimpleCompiler/WQHcompiler/Parser.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "cacaddfcae601b161ebe443928f0ff9085ec246e14eab7633488f0f03b37a070"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/my_program/simplecompiler/simplecompiler/wqhcompiler/vm.h"
+          },
+          "hashes": {
+            "sha-256": "289e5f6c0b0e90c2dad2b5112ec4f6384bee6aac555e2cd376a024fffd2aa5fc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/my_program/simplecompiler/simplecompiler/wqhcompiler/log.h"
+          },
+          "hashes": {
+            "sha-256": "62012138553e6063a827313f9e7f86e0d5c4bcc1c79d141fa5bd7919340ec97f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/my_program/simplecompiler/simplecompiler/wqhcompiler/parser.h"
+          },
+          "hashes": {
+            "sha-256": "8c7bf2d016918bb592fc9bdbffc1bd7e4d18ed35e7e4b223efaa39dcb0ea8e7f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/my_program/simplecompiler/simplecompiler/wqhcompiler/token.h"
+          },
+          "hashes": {
+            "sha-256": "99a4c899a699a4d893e034fbdc0296a9bfc9ac1974a86f22ce55b6ddbad73382"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/my_program/simplecompiler/simplecompiler/wqhcompiler/statement.h"
+          },
+          "hashes": {
+            "sha-256": "7f50f9f446cf2101232f209bd5478e66ba7d4a4c3ae3562c4cdf751f96fa008e"
+          }
+        }
+      ]
+    }
+  ]
+}

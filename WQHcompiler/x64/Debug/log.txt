@@ -28,3 +28,13 @@ open file C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHc
 [2024-7-29 16:28:43][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][144] 
 exit(0), running 33 codes 
 
+[2024-7-29 16:35:7][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHcompiler.exe
+[2024-7-29 16:35:7][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][144] 
+exit(0), running 116337 codes 
+
+[2024-7-29 16:42:53][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHcompiler.exe
+[2024-7-29 16:42:54][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][144] 
+exit(0), running 116337 codes 
+

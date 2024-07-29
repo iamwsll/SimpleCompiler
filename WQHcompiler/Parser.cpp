@@ -106,11 +106,11 @@ void Parser::read_src(char** argv)
 {
     FILE* fp;
     char* open_filename;
-	if (TokenOp._testVM.file_flag == 1)
+	if (TokenOp._testVM.file_flag == 1)//表示用户没有输入打开文件的参数
     {
 		open_filename = (char*)"test.txt";
 	}
-    else
+    else //依靠debug标记位来找到用户想要编译的文件
     {
         open_filename = *(argv + (TokenOp._testVM.debug == 1 ? 2 : 1));
 	}
@@ -144,19 +144,45 @@ void Parser::read_src(char** argv)
 }
 /*
 parser入口
-支持的C语言子集（EBNF文法）:
+（EBNF文法）(Extended Backus-Naur Form):
+终结符 (Terminal): 具体的符号或字符串，通常用引号括起来表示。
 
+例如："a" 表示字符 a。
+非终结符 (Non-terminal): 语法规则的名称，通常用尖括号括起来表示。
+
+例如：<identifier> 表示一个标识符。
+选择 (Alternation): 用竖线 | 表示多个选项中的一个。
+
+例如："a" | "b" 表示可以是 a 或 b。
+串接 (Concatenation): 用空格或省略表示依次出现的符号或规则。
+
+例如："a" "b" 表示先出现 a，再出现 b。
+重复 (Repetition): 用大括号 {} 表示可以出现零次或多次。
+
+例如：{"a"} 表示 a 可以出现零次或多次。
+选项 (Optional): 用方括号 [] 表示可以出现零次或一次。
+
+例如：["a"] 表示 a 可以出现一次或不出现。
+分组 (Grouping): 用小括号 () 表示作为一个整体处理的部分。
+
+例如：("a" "b") 表示 a 和 b 作为一个整体。
+重复次数 (Repetition with specific number): 用两个数字和 , 表示重复的次数范围。
+
+例如："a"{2,4} 表示 a 必须出现 2 到 4 次。
+
+
+支持的C语言子集（EBNF文法）:
 program = {global_decl};
-global_decl = enum_decl | func_decl | var_decl | struct_decl | union_decl | forward_type_decl | forward_func_decl;
-enum_decl = enum, [id], "{", id, ["=", number], {",", id, ["=", number]} ,"}";
-func_decl = ret_type, id, "(", [param_decl], ")", "{", func_body, "}";
+global_decl = enum_decl | func_decl | var_decl | struct_decl | union_decl | forward_type_decl（自定义类型前置声明） | forward_func_decl(函数前置声明);
+enum_decl = enum, [id(标识符名称）], "{", id, ["=", number], {",", id, ["=", number]} ,"}";
+func_decl = ret_type, id, "(", [param_decl(参数列表)], ")", "{", func_body, "}";
 struct_decl = struct, [id], "{", var_decl, {var_decl}, "}", ";";
 union_decl = union, [id], "{", var_decl, {var_decl}, "}", ";";
 forward_type_decl = (union | struct), id;
 forward_func_decl = ret_type, id, "(", [param_decl], ")", ";";
 param_decl = type, {"*"}, id, {",", type {"*"}, id};
 ret_type = void | type, {"*"};
-type = long long | char | user_defined_type;
+type = int | char | user_defined_type;
 user_defined_type = (enum | union | struct), id;
 func_body = {var_decl}, {statement};
 var_decl = type {"*"}, id, {",", id}, ";";
@@ -180,27 +206,25 @@ continue_statement = continue, ";";
 */
 void Parser::parse()
 {
-    struct Func_call_item* func_list_pos;
-    long long find_func;
 
     cur_struct_type = STRUCT;
     cur_union_type = UNION;
 
     TokenOp.next();
-    while (TokenOp.token > 0)
+	while (TokenOp.token > 0)//token是0，就说明next()的while语句里token = *src++中第一次执行src就是0，也就是说读到了源码的末尾
     {
         global_declaration();
     }
 
     // 全局定义解析完成后填充未定义的函数调用
-    for (func_list_pos = func_list; func_list_pos->hash; func_list_pos++)
+    for (struct Func_call_item* func_list_pos = func_list; func_list_pos&&func_list_pos->hash; func_list_pos++)
     {
-        find_func = 0;
-        for (current_id = symbols; current_id->token; current_id++)
+        long long find_func = 0;
+        for (current_id = symbols; current_id&&current_id->token; current_id++)
         {
-            if (current_id->IdClass == Fun && current_id->hash == func_list_pos->hash && current_id->value)
+            if (current_id->IdClass == Fun && current_id->hash == func_list_pos->hash && current_id->value)//value条件避免了是扫描到自己
             {
-                *func_list_pos->call_addresss = current_id->value;
+				*func_list_pos->call_addresss = current_id->value;//注意这里这个解引用，call_addresss是一个地址，这个地址是在code区里的
                 find_func = 1;
                 break;
             }
@@ -212,7 +236,7 @@ void Parser::parse()
         }
         func_list_pos->hash = 0;
         func_list_pos->line = 0;
-        func_list_pos->call_addresss = 0;
+        func_list_pos->call_addresss = 0;//置空
     }
 }
 /*
@@ -229,6 +253,7 @@ union_decl = union, [id], "{", var_decl, {var_decl}, "}", ";";
 forward_type_decl = (union | struct), id;
 forward_func_decl = ret_type, id, "(", [param_decl], ")", ";";
 */
+//这些文法其实就是ifelse以及递归
 void Parser::global_declaration()
 {
     long long type;
@@ -256,7 +281,7 @@ void Parser::global_declaration()
                 TokenOp.match('}');
             }
             // 已定义的enum类型
-            else if (id->IdClass == EnumType)
+            else if (id->IdClass == EnumType)//跳下去，直接被当做error处理
             {
                 basetype = INT;
                 goto define_glo_func;
@@ -276,7 +301,7 @@ void Parser::global_declaration()
             TokenOp.match('}');
         }
         TokenOp.match(';');
-        return;
+        return;//这句解析完了就返回了
     }
     // 解析struct定义、前向声明、struct变量定义、struct相关类型作为函数返回类型
     else if (TokenOp.token == Struct)
@@ -305,7 +330,7 @@ void Parser::global_declaration()
                 if (TokenOp.token == '{')
                 {
                     TokenOp.match('{');
-                    struct_union_body(id->type, 1);
+					struct_union_body(id->type, 1);//1是struct  2是union
                     TokenOp.match('}');
                 }
                 // 不是前向声明
@@ -323,7 +348,7 @@ void Parser::global_declaration()
                 if (TokenOp.token == '{')
                 {
                     // 已经被定义
-                    if (struct_symbols_list[id->type - STRUCT].next != 0)
+                    if (struct_symbols_list[id->type - STRUCT].next)
                     {
                         LOG(ERROR, "%d: duplicate struct definition\n", TokenOp.line);
                         std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
@@ -452,12 +477,12 @@ void Parser::global_declaration()
         basetype = CHAR;
     }
 
-define_glo_func:
+define_glo_func://跳转到这里，一定是开始了函数定义或者变量定义
     // 变量定义、函数定义、函数声明，直到变量定义函数声明结束;，函数定义结束}
     while (TokenOp.token != ';' && TokenOp.token != '}')
     {
         type = basetype;
-        while (TokenOp.token == Mul)
+        while (TokenOp.token == Mul)//处理指针的*
         {
             TokenOp.match(Mul);
             type = type + PTR;
@@ -712,19 +737,16 @@ struct_or_union: 1 struct 0 union
 
 union的大小取最大，struct大小累加。
 */
-void Parser::struct_union_body(long long su_type, long long struct_or_union)
+void Parser::struct_union_body(long long su_type, long long struct_or_union)//第一个参数是结构体/联合体的type，第二个参数是1表示结构体，0表示联合体
 {
-    long long domain_type;
-    long long domain_size;
-    long long cur_offset;
+	long long domain_type;//每个成员（也就是域）的类型
+    long long domain_size;//每个成员的大小
+	long long cur_offset;//当前域的偏移
     long long max_size;
-
-    struct us_domain* cur_us_symbol;    // 当前类型的结构体/联合体信息表中的记录 
-    struct us_domain** next_domain;     // 保存上一个节点的next指针的地址，新建下一个节点时用来连接
     struct us_domain* cur_node;
-
-    cur_us_symbol = struct_or_union ? &struct_symbols_list[su_type - STRUCT] : &union_symbols_list[su_type - UNION];
-    next_domain = &cur_us_symbol->next;
+    // 当前类型的结构体/联合体信息表中的记录 
+    struct us_domain* cur_us_symbol = struct_or_union ? &struct_symbols_list[su_type - STRUCT] : &union_symbols_list[su_type - UNION];
+    struct us_domain** next_domain = &cur_us_symbol->next; // 保存上一个节点的next指针的地址，新建下一个节点时用来连接
     cur_offset = 0;
     max_size = 0;
 
@@ -755,7 +777,7 @@ void Parser::struct_union_body(long long su_type, long long struct_or_union)
         // 整型
         if (domain_type >= CHAR && domain_type <= ENUM)
         {
-            domain_size = sizeof(long long); // char也按int大小对齐，存在优化空间，这里只是为了方便
+            domain_size = sizeof(long long); // char也按8字节大小对齐，存在优化空间，这里只是为了方便
         }
         // 指针
         else if (domain_type >= PTR)
@@ -768,7 +790,7 @@ void Parser::struct_union_body(long long su_type, long long struct_or_union)
             // struct
             if (domain_type >= STRUCT)
             {
-                if (struct_symbols_list[domain_type - STRUCT].next == 0)
+                if (struct_symbols_list[domain_type - STRUCT].next == 0)//也就是，这里包含的这个struct应该是一个已经完成的东西，不能直接在里面定义一个东西
                 {
                     LOG(ERROR, "%d: incomplete struct type can not be member of struct/union\n", TokenOp.line);
                     std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
@@ -800,7 +822,7 @@ void Parser::struct_union_body(long long su_type, long long struct_or_union)
 
         while (TokenOp.token != ';')
         {
-            if (TokenOp.token == Id)
+			if (TokenOp.token == Id)//有必要对下面的做一个解释：这里curnode代表的是一个成员cur_us_symbol代表的是一个结构体/联合体。
             {
                 // 结构中成员不会和全局作用域中的符号冲突，只需要哈希值即可，不会修改符号表，但需要检测是否在struct或者union内部有命名冲突
                 for (cur_node = cur_us_symbol->next; cur_node; cur_node = cur_node->next)
@@ -814,8 +836,8 @@ void Parser::struct_union_body(long long su_type, long long struct_or_union)
                 }
 
                 // 在us_domains_list中新建链表节点，添加到当前节点上
-                for (cur_node = us_domains_list; cur_node->hash; cur_node++);
-                cur_node->hash = current_id->hash;
+                for (cur_node = us_domains_list; cur_node&&cur_node->hash; cur_node++);
+				cur_node->hash = current_id->hash;//保持与结构体本体hash一致
                 cur_node->type = domain_type;
                 cur_node->size = domain_size;
                 cur_node->offset = struct_or_union ? cur_offset : 0;
@@ -834,7 +856,7 @@ void Parser::struct_union_body(long long su_type, long long struct_or_union)
             }
 
             // struct累计偏移，union确定最大的成员
-            cur_offset = cur_offset + domain_size;
+            cur_offset = cur_offset + domain_size;//因此这里我们对齐数是0
             max_size = max_size > domain_size ? max_size : domain_size;
 
             if (TokenOp.token != ';')

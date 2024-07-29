@@ -1,0 +1,75 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.39.33523.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/my_program/simplecompiler/simplecompiler/wqhcompiler/statement.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "321bc31825ea3ec5819fff8e1975dae2ce4243359c0deddad0da52c95d044555"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/my_program/simplecompiler/simplecompiler/wqhcompiler/statement.h"
+          },
+          "hashes": {
+            "sha-256": "7f50f9f446cf2101232f209bd5478e66ba7d4a4c3ae3562c4cdf751f96fa008e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/my_program/simplecompiler/simplecompiler/wqhcompiler/parser.h"
+          },
+          "hashes": {
+            "sha-256": "8c7bf2d016918bb592fc9bdbffc1bd7e4d18ed35e7e4b223efaa39dcb0ea8e7f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/my_program/simplecompiler/simplecompiler/wqhcompiler/vm.h"
+          },
+          "hashes": {
+            "sha-256": "289e5f6c0b0e90c2dad2b5112ec4f6384bee6aac555e2cd376a024fffd2aa5fc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/my_program/simplecompiler/simplecompiler/wqhcompiler/log.h"
+          },
+          "hashes": {
+            "sha-256": "62012138553e6063a827313f9e7f86e0d5c4bcc1c79d141fa5bd7919340ec97f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/my_program/simplecompiler/simplecompiler/wqhcompiler/token.h"
+          },
+          "hashes": {
+            "sha-256": "99a4c899a699a4d893e034fbdc0296a9bfc9ac1974a86f22ce55b6ddbad73382"
+          }
+        }
+      ]
+    }
+  ]
+}

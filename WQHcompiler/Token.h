@@ -49,7 +49,7 @@ public:
     Parser* _parserptr;
 	// tokenizer
 	long long token=0;          // 当前token
-	long long token_val=0;      // 当前token是常量或字符串字面值时用来记录值
+	long long token_val=0;      // 当前token是常量或字符串字面值时用来记录值 <token,token_val>
 	char* src=0;          // 源码
 	long long line=0;           // 行号
 	long long last_token=0;     // 支持记录和回溯token流的功能
