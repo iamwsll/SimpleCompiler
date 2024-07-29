@@ -9,8 +9,8 @@
 #include"Parser.h"
 
 
-VM testVM;//虚拟机
-void Usage(int argc, char** argv)//处理命令行参数
+
+void Usage(int argc, char** argv, VM& testVM)//处理命令行参数
 {
     argc--;
     argv++;
@@ -20,11 +20,12 @@ void Usage(int argc, char** argv)//处理命令行参数
         argc--;
         argv++;
     }
-    //if (argc < 1)
-    //{
-    //    std::cout<<"usage: ./SimpleCompilerWQH [-d] xxx.c [args to main]"<<std::endl;
-    //    exit(-1);
-    //}
+    if (argc < 1)
+    {
+		std::cout << "[###] The " << "\"text.txt\"" << " file opens by default.If this is not what you want, please open it in the following format :" << std::endl;
+        std::cout<<"usage: ./SimpleCompilerWQH [-d] xxx.c [args to main]"<<std::endl<<std::endl;
+        testVM.file_flag = 1;
+    }
 
 }
 int32_t main(int argc, char** argv)
@@ -35,7 +36,8 @@ int32_t main(int argc, char** argv)
     //两个选项只需要放开一个
 	//EnableScreen();//开启日志,向屏幕输出
 	EnableFile();//开启日志，向文件输出
-	Usage(argc, argv);//处理命令行参数
+    VM testVM;//虚拟机
+	Usage(argc, argv,testVM);//处理命令行参数
 	Parser parser_test(testVM);//解析器
     parser_test.read_src(argv);
     parser_test.TokenOp.line = 1;

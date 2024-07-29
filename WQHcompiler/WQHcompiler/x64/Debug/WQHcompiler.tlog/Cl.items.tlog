@@ -1,6 +1,6 @@
-C:\my_program\SimpleCompiler\WQHcompiler\Log.cpp;C:\my_program\SimpleCompiler\WQHcompiler\WQHcompiler\x64\Debug\Log.obj
-C:\my_program\SimpleCompiler\WQHcompiler\Parser.cpp;C:\my_program\SimpleCompiler\WQHcompiler\WQHcompiler\x64\Debug\Parser.obj
-C:\my_program\SimpleCompiler\WQHcompiler\StateMent.cpp;C:\my_program\SimpleCompiler\WQHcompiler\WQHcompiler\x64\Debug\StateMent.obj
-C:\my_program\SimpleCompiler\WQHcompiler\Token.cpp;C:\my_program\SimpleCompiler\WQHcompiler\WQHcompiler\x64\Debug\Token.obj
-C:\my_program\SimpleCompiler\WQHcompiler\VM.cpp;C:\my_program\SimpleCompiler\WQHcompiler\WQHcompiler\x64\Debug\VM.obj
-C:\my_program\SimpleCompiler\WQHcompiler\WQHcompilerMain.cpp;C:\my_program\SimpleCompiler\WQHcompiler\WQHcompiler\x64\Debug\WQHcompilerMain.obj
+C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Log.cpp;C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\WQHcompiler\x64\Debug\Log.obj
+C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp;C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\WQHcompiler\x64\Debug\Parser.obj
+C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\StateMent.cpp;C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\WQHcompiler\x64\Debug\StateMent.obj
+C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Token.cpp;C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\WQHcompiler\x64\Debug\Token.obj
+C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp;C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\WQHcompiler\x64\Debug\VM.obj
+C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\WQHcompilerMain.cpp;C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\WQHcompiler\x64\Debug\WQHcompilerMain.obj

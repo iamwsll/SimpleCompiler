@@ -69,6 +69,7 @@ public:
     // debug
     long long debug = 0;                  // 调试模式
     long long* last_code = nullptr;             // 上一次打印至的code段指针
+    long long file_flag = 0;
 public:
 	VM(long long input_poolsize = 256 * 1024);
     void init_run_VM(Parser* parserptr, int argc, char** argv);

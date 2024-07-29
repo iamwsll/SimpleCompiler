@@ -105,10 +105,19 @@ void Parser::init_symbols()
 void Parser::read_src(char** argv)
 {
     FILE* fp;
-    //if ((fp = fopen(*(argv+(TokenOp._testVM.debug==1?2:1)), "r")) == nullptr )
-     if ((fp = fopen("test.txt", "r")) == nullptr)
+    char* open_filename;
+	if (TokenOp._testVM.file_flag == 1)
     {
-        LOG(FATAL, "Could not open(%s)\n", *argv);
+		open_filename = (char*)"test.txt";
+	}
+    else
+    {
+        open_filename = *(argv + (TokenOp._testVM.debug == 1 ? 2 : 1));
+	}
+    
+    if ((fp = fopen(open_filename, "r")) == nullptr)
+    {
+        std::cout<<"Could not open(%s)"<<*argv<<std::endl;
         exit(-1);
     }
 	LOG(DEBUG, "open file %s\n", *argv);
