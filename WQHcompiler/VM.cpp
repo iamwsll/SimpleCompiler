@@ -66,7 +66,7 @@ long long VM::run_vm()
             {
                 fprintf(file_record, "%lld >        %.4s", cycle, &"LEA ,IMM ,JMP ,JSR ,JZ  ,JNZ ,ENT ,ADJ ,LEV ,LI  ,LC  ,SI  ,SC  ,PUSH,"
                     "OR  ,XOR ,AND ,EQ  ,NE  ,LT  ,GT  ,LE  ,GE  ,SHL ,SHR ,ADD ,SUB ,MUL ,DIV ,MOD ,"
-                    "OPEN,READ,CLOS,WRIT,PRTF,MALC,FREE,MSET,MCMP,MCPY,EXIT,"[(op - LEA) * 5]);//这个*5是注意到每个字符（包括逗号）刚好5个字符
+                    "OPEN,READ,CLOS,WRIT,PRTF,SCAN,MALC,FREE,MSET,MCMP,MCPY,EXIT,"[(op - LEA) * 5]);//这个*5是注意到每个字符（包括逗号）刚好5个字符
                 if (op >= JMP && op <= JNZ)
                     fprintf(file_record, "              0x%.10llX\n", *pc);
                 else if (op <= ADJ)
@@ -136,6 +136,7 @@ long long VM::run_vm()
             ax = (long long)bytesWritten;
         }
         else if (op == PRTF) { tmp = sp + pc[1]; ax = printf((char*)tmp[-1], tmp[-2], tmp[-3], tmp[-4], tmp[-5], tmp[-6]); }
+        else if (op == SCAN) { tmp = sp + pc[1]; ax = scanf((char*)tmp[-1], tmp[-2], tmp[-3], tmp[-4], tmp[-5], tmp[-6]); }
         else if (op == MALC) ax = (long long)malloc(*sp);                // (size)
         else if (op == FREE) free((void*)*sp);                     // (addr)
         else if (op == MSET) ax = (long long)memset((char*)sp[2], sp[1], *sp);        // (dest, val, size)

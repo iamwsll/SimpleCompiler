@@ -22,7 +22,7 @@ void TokensClass::next()
                     long long op = *(_testVM.last_code);
 					fprintf(compiler_file, "     0x%.10llX: %.4s", (long long)(_testVM.last_code)++, &"LEA ,IMM ,JMP ,JSR ,JZ  ,JNZ ,ENT ,ADJ ,LEV ,LI  ,LC  ,SI  ,SC  ,PUSH,"
 						"OR  ,XOR ,AND ,EQ  ,NE  ,LT  ,GT  ,LE  ,GE  ,SHL ,SHR ,ADD ,SUB ,MUL ,DIV ,MOD ,"//这个*5是注意到每个单词（包括逗号）刚好5个字符
-						"OPEN,READ,CLOS,WRIT,PRTF,MALC,FREE,MSET,MCMP,MCPY,EXIT,"[(op - LEA) * 5]);
+						"OPEN,READ,CLOS,WRIT,PRTF,SCAN,MALC,FREE,MSET,MCMP,MCPY,EXIT,"[(op - LEA) * 5]);
                     if (op >= JMP && op <= JNZ)
 					fprintf(compiler_file, "          0x%.10llX\n", *_testVM.last_code++);//这里的数据是地址
                     else if (op <= ADJ)

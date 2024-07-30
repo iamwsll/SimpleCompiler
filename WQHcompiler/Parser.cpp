@@ -76,7 +76,7 @@ void Parser::init_symbols()
 {
     long long tmp;
     TokenOp.src = (char*)"break char continue do else enum for goto if int return sizeof struct union while "
-        "open read close write printf malloc free memset memcmp memcpy exit void main";
+        "open read close write printf scanf malloc free memset memcmp memcpy exit void main";
 
     // 将关键字提前添加到符号表，在词法分析时关键字走标识符的识别流程，由于已经在符号表中，所以直接返回符号表的结果
     tmp = Break;

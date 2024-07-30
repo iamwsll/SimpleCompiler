@@ -51,6 +51,7 @@ enum Instruction
 	CLOS,//栈顶是文件指针，这是要关闭这个文件。ax中存储fclose结果，如果非0，代表失败，ax记录-1.否则记录0。
     WRIT,//与read类似
     PRTF,//pc+1处存储了有多少个可变参数。这些可变参数在调用PRTF之前就已经push到栈顶了。同时栈顶还存储了char*。这样把这些数据依次填充就好了 
+    SCAN,//与PRTF类似
 	MALC,// malloc    栈顶存储了需要分配的内存大小，ax存储了分配的内存地址
     FREE, // free    free栈顶存储的指针
     MSET, // memset   sp[2], sp[1], *sp    分别存储了 (dest, val, size)，然后ax存储了返回值
@@ -75,7 +76,7 @@ public:
     long long cycle = 0; // 寄存器
     long long poolsize = 0; // 各个段分配的大小,单位：字节
     // debug
-    long long debug = 0;                  // 调试模式
+    long long debug = 1;                  // 调试模式
     long long* last_code = nullptr;             // 上一次打印至的code段指针
     long long file_flag = 0;
 public:
