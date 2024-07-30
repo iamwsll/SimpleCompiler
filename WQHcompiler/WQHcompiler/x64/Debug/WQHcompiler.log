@@ -1,5 +1,4 @@
-﻿  Log.cpp
-  Parser.cpp
+﻿  Parser.cpp
   StateMent.cpp
   Token.cpp
   VM.cpp

@@ -1,19 +1,1 @@
-1 >        ENT               1
-2 >        IMM               2433796542576
-3 >        PUSH
-4 >        LEA               -1
-5 >        PUSH
-6 >        SCAN
-7 >        ADJ               2
-8 >        IMM               2433796542584
-9 >        PUSH
-10 >        LEA               -1
-11 >        LI  
-12 >        PUSH
-13 >        PRTF
-14 >        ADJ               2
-15 >        IMM               0
-16 >        LEV 
-17 >        PUSH
-18 >        EXIT
 

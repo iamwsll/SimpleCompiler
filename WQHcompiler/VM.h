@@ -76,7 +76,7 @@ public:
     long long cycle = 0; // 寄存器
     long long poolsize = 0; // 各个段分配的大小,单位：字节
     // debug
-    long long debug = 1;                  // 调试模式
+    long long debug = 0;                  // 调试模式
     long long* last_code = nullptr;             // 上一次打印至的code段指针
     long long file_flag = 0;
 public:
