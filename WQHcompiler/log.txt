@@ -4,3 +4,23 @@ open file C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHc
 [2024-7-30 2:44:31][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][145] 
 exit(0), running 116337 codes 
 
+[2024-7-30 13:1:51][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHcompiler.exe
+[2024-7-30 13:1:51][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][145] 
+exit(0), running 116337 codes 
+
+[2024-7-30 13:36:23][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHcompiler.exe
+[2024-7-30 13:36:23][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][145] 
+exit(3), running 49 codes 
+
+[2024-7-30 13:37:33][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHcompiler.exe
+[2024-7-30 13:37:33][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][145] 
+exit(3), running 49 codes 
+
+[2024-7-30 18:18:50][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHcompiler.exe
+[2024-7-30 18:18:50][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][145] 
+exit(-1), running 43 codes 
+

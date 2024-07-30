@@ -21,115 +21,80 @@ for_statement = for, "(", [expression], ";", [expression], ";", [expression], ")
 do_while_statement = do, statement, while, "(", [expression], ")", ";";
 break_statement = break, ";";
 continue_statement = continue, ";";
-
-代码生成：
-=======================if-else语句=========================
-if (condition)
-{
-    true_statements;
-}
-
-if (condition)
-{
-    true_statements;
-}
-else
-{
-    false_statements;
-}
-
-[condition]
-JZ [end]
-[true_statements]
-...                  <-----[end]
-
-[condition]
-JZ [a]
-[true_statements]
-JMP [end]
-[false_statements]   <-----[a]
-...                  <-----[end]
-
-=======================while 语句============================
-while (condition)
-{
-    while_statements;
-}
-
-[condition]         <-----[a]
-JZ [end]
-[while_statements]
-JMP [a]
-...                 <-----[end]
-
-=======================for 语句=============================
-for (init; condition; iter)
-{
-    for_statements;
-}
-
-[init]
-[condition]/IMM 1       <------ [a] // has condition/no condition
-JNZ [c]
-JMP [end]
-[iter]                  <------ [b]
-JMP [a]
-[for_statements]        <------ [c]
-JMP [b]
-...                     <------ [end]
-
-=========================do while语句=======================
-[do_while_statements]   <------ [a]
-[condition]
-JNZ [a]
-...                     <------ [end]
-
-=========================break 语句=========================
-JMP [end]
-
-=========================cotinue语句========================
-JMP [entry]
-
 */
 void StateMent::statement()
 {
-    long long* a, * b, * c, * end; // 记录保存跳转地址的code段地址，后续确定后填充
+   
     struct Parser::Symbol_item* id;
-    struct Parser::Bc_list_item* bclist_pos;
     struct Parser::Label_list_item* label_list_pos;
-    long long* tmp_loop;  // 考虑循环嵌套，暂存当前循环，以便结束内层循环后恢复cur_loop，为了实现break和continue
+   
 
-
+    long long* a, * b, * c, * end; // 记录保存跳转地址的code段地址，后续确定后填充
     a = b = c = end = 0;
-    tmp_loop = 0;
-    bclist_pos = 0;
+    long long* tmp_loop = 0; // 考虑循环嵌套，暂存当前循环，以便结束内层循环后恢复cur_loop，为了实现break和continue
+    struct Parser::Bc_list_item* bclist_pos = 0;
 
     // 暂存当前循环，进入内层循环时会直接覆盖cur_loop
     tmp_loop = _parserptr->cur_loop;
 
     // if, "(", expression, ")", statement, [else, statement]
+   /* 代码生成：
+        ====================== = if - else语句======================== =
+        if (condition)
+        {
+            true_statements;
+        }
+        [condition]
+        JZ[end]
+        [true_statements]
+        ... < ---- - [end]
+
+        if (condition)
+        {
+            true_statements;
+        }
+        else
+        {
+            false_statements;
+        }
+        [condition]
+        JZ[a]
+        [true_statements]
+        JMP[end]
+        [false_statements] < ---- - [a]
+        ... < ---- - [end]*/
     if (_parserptr->TokenOp.token == If)
     {
         _parserptr->TokenOp.match(If);
         _parserptr->TokenOp.match('(');
-        expression(Comma);
+        expression(Comma);//这里只是表达自己的优先级很低
         _parserptr->TokenOp.match(')');
 
         *++_parserptr->TokenOp._testVM.code = JZ;
-        a = end = ++_parserptr->TokenOp._testVM.code;
-
+        a = end = ++_parserptr->TokenOp._testVM.code;//JZ[a]
         statement();
         if (_parserptr->TokenOp.token == Else)
         {
             _parserptr->TokenOp.match(Else);
             *a = (long long)(_parserptr->TokenOp._testVM.code + 3);
             *++_parserptr->TokenOp._testVM.code = JMP;
-            end = ++_parserptr->TokenOp._testVM.code;
+            end = ++_parserptr->TokenOp._testVM.code; //JMP[end]
             statement();
         }
-        *end = (long long)(_parserptr->TokenOp._testVM.code + 1);
+        *end = (long long)(_parserptr->TokenOp._testVM.code + 1);//填充JMP地址
     }
     // while, "(", expression, ")", statement
+  /*  ====================== = while 语句============================
+        while (condition)
+        {
+            while_statements;
+        }
+
+    [condition] < ---- - [a]
+        JZ[end]
+        [while_statements]
+        JMP[a]
+        ... < ---- - [end]*/
     else if (_parserptr->TokenOp.token == While)
     {
         _parserptr->TokenOp.match(While);
@@ -141,13 +106,13 @@ void StateMent::statement()
         _parserptr->TokenOp.match(')');
 
         *++_parserptr->TokenOp._testVM.code = JZ;
-        end = ++_parserptr->TokenOp._testVM.code;
+        end = ++_parserptr->TokenOp._testVM.code; //JZ[end]
 
         statement();
 
         *++_parserptr->TokenOp._testVM.code = JMP;
-        *++_parserptr->TokenOp._testVM.code = (long long)a;
-        *end = (long long)(_parserptr->TokenOp._testVM.code + 1);
+        *++_parserptr->TokenOp._testVM.code = (long long)a; //JMP[a]
+		*end = (long long)(_parserptr->TokenOp._testVM.code + 1);//填充JMP地址
 
         // 处理break和continue列表中的跳转地址
         for (bclist_pos = _parserptr->break_list; bclist_pos->loop; bclist_pos++)
@@ -170,6 +135,22 @@ void StateMent::statement()
         }
     }
     // for, "(", [expression], ";", [expression], ";", [expression], ")", statement
+    //====================== = for 语句============================ =
+    //    for (init; condition; iter)
+    //    {
+    //        for_statements;
+    //    }
+
+    //    [init]
+    //    [condition] / IMM 1 < ------[a] // has condition/no condition
+    //    JNZ[c]
+    //    JMP[end]
+    //    [iter] < ------[b]
+    //    JMP[a]
+    //    [for_statements] < ------[c]
+    //    JMP[b]
+    //    ... < ------[end]
+
     else if (_parserptr->TokenOp.token == For)
     {
         _parserptr->TokenOp.match(For);
@@ -238,6 +219,11 @@ void StateMent::statement()
         }
     }
     // do, statement, while, "(", [expression], ")", ";"
+   /* ======================== = do while语句====================== =
+        [do_while_statements] < ------[a]
+        [condition]
+        JNZ[a]
+        ... < ------[end]*/
     else if (_parserptr->TokenOp.token == Do)
     {
         _parserptr->TokenOp.match(Do);
@@ -274,6 +260,8 @@ void StateMent::statement()
         }
     }
     // break, ";"
+    //======================== = break 语句======================== =
+    //    JMP[end]
     else if (_parserptr->TokenOp.token == Break)
     {
         // 当前不在循环中，报错
@@ -292,6 +280,8 @@ void StateMent::statement()
         bclist_pos->bc_address = ++_parserptr->TokenOp._testVM.code;
     }
     // continue, ";"
+    //    ======================== = cotinue语句========================
+    //    JMP[entry]
     else if (_parserptr->TokenOp.token == Continue)
     {
         // 当前不在循环中，报错
@@ -440,16 +430,13 @@ void StateMent::expression(long long level)
     struct Parser::Symbol_item* id;
     long long tmp;
     long long* addr;
-    struct Parser::us_domain* cur_node;
-    struct Parser::Func_call_item* func_list_pos;
-
     // 整数字面值
     if (_parserptr->TokenOp.token == Num)
     {
         _parserptr->TokenOp.match(Num);
         *++_parserptr->TokenOp._testVM.code = IMM;
         *++_parserptr->TokenOp._testVM.code = _parserptr->TokenOp.token_val;
-        _parserptr->expr_type = INT;
+        _parserptr->expr_type = INT;//这个是在不断维护的
     }
     // 字符串字面值
     else if (_parserptr->TokenOp.token == '"')
@@ -462,7 +449,7 @@ void StateMent::expression(long long level)
         {
             _parserptr->TokenOp.match('"');
         }
-        _parserptr->TokenOp._testVM.data = (char*)(((long long)_parserptr->TokenOp._testVM.data + sizeof(long long)) & (-(long long)sizeof(long long))); // data首地址取int整数倍，同时字符串末尾填充为空位置中的0
+        _parserptr->TokenOp._testVM.data = (char*)(((long long)_parserptr->TokenOp._testVM.data + sizeof(long long)) & (-(long long)sizeof(long long))); // data首地址取int整数倍，同时字符串末尾填充为空位置中的0。这里事实上就是为了对齐
         _parserptr->expr_type = CHAR + PTR;
     }
     // sizeof运算符：一元运算符，结果是int类型的右值
@@ -511,7 +498,7 @@ void StateMent::expression(long long level)
                 *++_parserptr->TokenOp._testVM.code = _parserptr->union_symbols_list[_parserptr->expr_type - UNION].size;
             }
         }
-        else // pointer/enum/long long
+        else // pointer/enum/int
         {
             *++_parserptr->TokenOp._testVM.code = sizeof(long long);
         }
@@ -532,7 +519,7 @@ void StateMent::expression(long long level)
             // 参数按照顺序依次压栈，标准C语言是按照逆序压栈的
             while (_parserptr->TokenOp.token != ')')
             {
-                expression(Assign);
+                expression(Assign);//仅仅表示优先级
                 *++_parserptr->TokenOp._testVM.code = PUSH;
                 tmp++;
                 if (_parserptr->TokenOp.token != ')')
@@ -544,7 +531,7 @@ void StateMent::expression(long long level)
                         std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
                     }
                 }
-            }
+			}//不断把数据压栈，给下个函数调用
             _parserptr->TokenOp.match(')');
 
             // 系统调用
@@ -564,7 +551,8 @@ void StateMent::expression(long long level)
                 // 函数声明了但是未定义，记录调用地址，全局声明解析结束后填充
                 else
                 {
-                    for (func_list_pos = _parserptr->func_list; func_list_pos->hash; func_list_pos++);
+                    struct Parser::Func_call_item* func_list_pos;
+                    for (func_list_pos = _parserptr->func_list; func_list_pos->hash; func_list_pos++);//只是向后走
                     func_list_pos->hash = id->hash;
                     func_list_pos->line = _parserptr->TokenOp.line;
                     func_list_pos->call_addresss = ++_parserptr->TokenOp._testVM.code;
@@ -829,6 +817,7 @@ void StateMent::expression(long long level)
             *++_parserptr->TokenOp._testVM.code = (_parserptr->expr_type == CHAR) ? SC : SI;
         }
         // expr ? a : b 三目运算符，注意中间的a相当于加了括号，需要使用最低优先级，左边的expr和b则就是?:的优先级
+        //其实这里是和ifelse相同的
         else if (_parserptr->TokenOp.token == Cond)
         {
             _parserptr->TokenOp.match(Cond);
@@ -1143,7 +1132,7 @@ void StateMent::expression(long long level)
             id = _parserptr->current_id;
             _parserptr->TokenOp.match(Id);
 
-            cur_node = (_parserptr->expr_type >= STRUCT) ? &_parserptr->struct_symbols_list[_parserptr->expr_type - STRUCT] : &_parserptr->union_symbols_list[_parserptr->expr_type - UNION];
+            struct Parser::us_domain* cur_node = (_parserptr->expr_type >= STRUCT) ? &_parserptr->struct_symbols_list[_parserptr->expr_type - STRUCT] : &_parserptr->union_symbols_list[_parserptr->expr_type - UNION];
             cur_node = cur_node->next; // 从第一个成员开始
             for (; cur_node; cur_node = cur_node->next)
             {

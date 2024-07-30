@@ -257,7 +257,6 @@ forward_func_decl = ret_type, id, "(", [param_decl], ")", ";";
 void Parser::global_declaration()
 {
     long long type;
-    struct Symbol_item cur_func; // 函数解析时缓存当前符号表项
     struct Symbol_item* id;
 
     basetype = INT;
@@ -479,9 +478,11 @@ void Parser::global_declaration()
 
 define_glo_func://跳转到这里，一定是开始了函数定义或者变量定义
     // 变量定义、函数定义、函数声明，直到变量定义函数声明结束;，函数定义结束}
+    struct Symbol_item cur_func; // 函数解析时缓存当前符号表项
     while (TokenOp.token != ';' && TokenOp.token != '}')
     {
         type = basetype;
+       
         while (TokenOp.token == Mul)//处理指针的*
         {
             TokenOp.match(Mul);
@@ -666,12 +667,9 @@ forward_func_decl = ret_type, id, "(", [param_decl], ")", ";";
 */
 long long Parser::function_declaration()
 {
-    long long forward_decl;
-    struct Label_list_item* label_list_pos;
-    long long find_label;
 
     cur_loop = 0;
-    forward_decl = 0;
+    long long forward_decl = 0;
 
     TokenOp.match('(');
     function_parameter();
@@ -689,9 +687,9 @@ long long Parser::function_declaration()
     }
 
     // 填充goto的标号地址
-    for (label_list_pos = label_list; label_list_pos->label_hash; label_list_pos++)
+    for (struct Label_list_item* label_list_pos = label_list; label_list_pos->label_hash; label_list_pos++)
     {
-        find_label = 0;
+        long long find_label = 0;
         for (current_id = symbols; current_id->token; current_id++)
         {
             if (current_id->token == Id && current_id->IdClass == Label && current_id->hash == label_list_pos->label_hash && current_id->value)
@@ -836,8 +834,8 @@ void Parser::struct_union_body(long long su_type, long long struct_or_union)//第
                 }
 
                 // 在us_domains_list中新建链表节点，添加到当前节点上
-                for (cur_node = us_domains_list; cur_node&&cur_node->hash; cur_node++);
-				cur_node->hash = current_id->hash;//保持与结构体本体hash一致
+                for (cur_node = us_domains_list; cur_node&&cur_node->hash; cur_node++);//注意这里只是往后走
+				cur_node->hash = current_id->hash;
                 cur_node->type = domain_type;
                 cur_node->size = domain_size;
                 cur_node->offset = struct_or_union ? cur_offset : 0;
@@ -889,23 +887,6 @@ func_body = {var_decl}, {statement};
 var_decl = type {"*"}, id, {",", id}, ";";
 type = long long | char | user_defiend_type;
 user_defined_type = (enum | union | struct), id;
-
-|    ....       | high address
-+---------------+
-| arg: param_a  |    new_bp + 3
-+---------------+
-| arg: param_b  |    new_bp + 2
-+---------------+
-|return address |    new_bp + 1
-+---------------+
-| old BP        | <- new BP
-+---------------+
-| local_1       |    new_bp - 1
-+---------------+
-| local_2       |    new_bp - 2
-+---------------+
-|    ....       |  low address
-
 代码生成：
 函数：
 ENT count_of_locals
