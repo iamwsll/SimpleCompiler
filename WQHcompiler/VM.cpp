@@ -7,7 +7,7 @@ VM::VM(long long input_poolsize)
 {
     // 为VM分配内存
     //直接操纵内存可以很方便的进行大小控制，以及一些类型的强制转换也会很方便
-    if (!(code = (long long*)malloc(poolsize)))
+    if (!(code =last_code = (long long*)malloc(poolsize)))
     {
         LOG(FATAL, "Could not malloc(%d) for code area\n", poolsize);
         std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);

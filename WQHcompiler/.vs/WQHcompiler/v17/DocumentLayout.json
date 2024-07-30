@@ -3,38 +3,6 @@
   "WorkspaceRootPath": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Parser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:Parser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\StateMent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:StateMent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\VM.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:VM.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Token.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:Token.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Log.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:Log.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Parser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:Parser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Token.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:Token.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\VM.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:VM.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\WQHcompilerMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:WQHcompilerMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -43,8 +11,40 @@
       "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:StateMent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\VM.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:VM.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\VM.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:VM.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Token.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:Token.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Token.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:Token.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Parser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:Parser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Parser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:Parser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Log.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:Log.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\StateMent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:StateMent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Log.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0FAAE998-9495-4358-A3BC-552504576D0E}|WQHcompiler.vcxproj|solutionrelative:Log.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,17 +54,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 240,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Parser.cpp",
               "DocumentMoniker": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Parser.cpp",
               "RelativeDocumentMoniker": "Parser.cpp",
               "ToolTip": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Parser.cpp",
               "RelativeToolTip": "Parser.cpp",
-              "ViewState": "AQIAAHcDAAAAAAAAAAAAADcBAAAeAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGgAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-28T12:56:29.089Z",
               "IsPinned": true,
@@ -72,26 +72,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "WQHcompilerMain.cpp",
               "DocumentMoniker": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\WQHcompilerMain.cpp",
               "RelativeDocumentMoniker": "WQHcompilerMain.cpp",
               "ToolTip": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\WQHcompilerMain.cpp",
               "RelativeToolTip": "WQHcompilerMain.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADQAAAANAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-28T08:58:16.663Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "VM.h",
               "DocumentMoniker": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\VM.h",
               "RelativeDocumentMoniker": "VM.h",
               "ToolTip": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\VM.h",
               "RelativeToolTip": "VM.h",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAAAFEAAABFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAE0AAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-07-28T09:01:25.618Z",
               "IsPinned": true,
@@ -103,33 +104,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Parser.h",
-              "DocumentMoniker": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Parser.h",
-              "RelativeDocumentMoniker": "Parser.h",
-              "ToolTip": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Parser.h",
-              "RelativeToolTip": "Parser.h",
-              "ViewState": "AQIAADoAAAAAAAAAAAAUwFwAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-28T08:59:03.77Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "Log.cpp",
               "DocumentMoniker": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Log.cpp",
               "RelativeDocumentMoniker": "Log.cpp",
               "ToolTip": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Log.cpp",
               "RelativeToolTip": "Log.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB4AAAAZAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-29T04:45:06.591Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 1,
               "Title": "StateMent.h",
               "DocumentMoniker": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\StateMent.h",
               "RelativeDocumentMoniker": "StateMent.h",
@@ -137,17 +125,18 @@
               "RelativeToolTip": "StateMent.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-28T13:51:52.83Z"
+              "WhenOpened": "2024-07-28T13:51:52.83Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Token.cpp",
               "DocumentMoniker": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Token.cpp",
               "RelativeDocumentMoniker": "Token.cpp",
               "ToolTip": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Token.cpp",
               "RelativeToolTip": "Token.cpp",
-              "ViewState": "AQIAAFsAAAAAAAAAAAAiwIUAAAArAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAMoAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-28T12:56:43.569Z",
               "EditorCaption": ""
@@ -160,14 +149,27 @@
               "RelativeDocumentMoniker": "VM.cpp",
               "ToolTip": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\VM.cpp",
               "RelativeToolTip": "VM.cpp",
-              "ViewState": "AQIAAGwAAAAAAAAAAAAAAEYAAAA0AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADoAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-28T13:58:34.457Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
+              "Title": "Parser.h",
+              "DocumentMoniker": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Parser.h",
+              "RelativeDocumentMoniker": "Parser.h",
+              "ToolTip": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Parser.h",
+              "RelativeToolTip": "Parser.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFwAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-28T08:59:03.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Log.h",
               "DocumentMoniker": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Log.h",
               "RelativeDocumentMoniker": "Log.h",
@@ -175,11 +177,12 @@
               "RelativeToolTip": "Log.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-28T17:15:12.702Z"
+              "WhenOpened": "2024-07-28T17:15:12.702Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Token.h",
               "DocumentMoniker": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\Token.h",
               "RelativeDocumentMoniker": "Token.h",
@@ -192,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "StateMent.cpp",
               "DocumentMoniker": "C:\\my_program\\SimpleCompiler\\SimpleCompiler\\WQHcompiler\\StateMent.cpp",
               "RelativeDocumentMoniker": "StateMent.cpp",

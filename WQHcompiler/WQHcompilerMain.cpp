@@ -17,6 +17,7 @@ void Usage(int argc, char** argv, VM& testVM)//处理命令行参数
     if (argc > 0 && (*argv)[0] == '-' && (*argv)[1] == 'd')//说明是debug模式
     {
         testVM.debug = 1;
+        std::cout << "[###] debug mode start!" << std::endl;
         argc--;
         argv++;
     }
