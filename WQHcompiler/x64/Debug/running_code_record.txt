@@ -1,58 +1,2285 @@
-1 >        ENT               1
-2 >        LEA               -1
+1 >        ENT               3
+2 >        LEA               -2
 3 >        PUSH
-4 >        IMM               5
+4 >        IMM               8
 5 >        PUSH
-6 >        IMM               6
-7 >        GT  
-8 >        JZ                0x2D09A720100
-9 >        IMM               6
-10 >        PUSH
-11 >        IMM               5
-12 >        MUL 
+6 >        IMM               100
+7 >        MUL 
+8 >        PUSH
+9 >        MALC
+10 >        ADJ               1
+11 >        SI  
+12 >        IMM               2250320375920
 13 >        PUSH
-14 >        IMM               7
-15 >        ADD 
-16 >        PUSH
-17 >        IMM               3
-18 >        DIV 
+14 >        LEA               -1
+15 >        PUSH
+16 >        SCAN
+17 >        ADJ               2
+18 >        LEA               -3
 19 >        PUSH
-20 >        IMM               5
-21 >        ADD 
-22 >        JZ                0x2D09A7201E0
-23 >        IMM               6
-24 >        JZ                0x2D09A7201E0
-25 >        IMM               1
-26 >        JMP               0x2D09A7201F0
-27 >        JZ                0x2D09A720260
-28 >        IMM               7
-29 >        PUSH
-30 >        IMM               5
-31 >        ADD 
-32 >        JZ                0x2D09A720260
-33 >        IMM               1
-34 >        JMP               0x2D09A720270
-35 >        JNZ               0x2D09A720340
-36 >        IMM               1
-37 >        PUSH
-38 >        IMM               5
-39 >        PUSH
-40 >        IMM               6
-41 >        PUSH
-42 >        IMM               7
-43 >        MUL 
-44 >        ADD 
-45 >        MUL 
-46 >        SI  
-47 >        IMM               3094969827440
-48 >        PUSH
-49 >        LEA               -1
-50 >        LI  
-51 >        PUSH
-52 >        PRTF
-53 >        ADJ               2
-54 >        IMM               0
-55 >        LEV 
-56 >        PUSH
-57 >        EXIT
+20 >        IMM               0
+21 >        SI  
+22 >        LEA               -3
+23 >        LI  
+24 >        PUSH
+25 >        LEA               -1
+26 >        LI  
+27 >        LT  
+28 >        JNZ               0x20BF16A4BC8
+29 >        IMM               2250320375928
+30 >        PUSH
+31 >        LEA               -2
+32 >        LI  
+33 >        PUSH
+34 >        LEA               -3
+35 >        LI  
+36 >        PUSH
+37 >        IMM               8
+38 >        MUL 
+39 >        ADD 
+40 >        PUSH
+41 >        SCAN
+42 >        ADJ               2
+43 >        JMP               0x20BF16A4B70
+44 >        LEA               -3
+45 >        PUSH
+46 >        LI  
+47 >        PUSH
+48 >        IMM               1
+49 >        ADD 
+50 >        SI  
+51 >        JMP               0x20BF16A4B10
+52 >        LEA               -3
+53 >        LI  
+54 >        PUSH
+55 >        LEA               -1
+56 >        LI  
+57 >        LT  
+58 >        JNZ               0x20BF16A4BC8
+59 >        IMM               2250320375928
+60 >        PUSH
+61 >        LEA               -2
+62 >        LI  
+63 >        PUSH
+64 >        LEA               -3
+65 >        LI  
+66 >        PUSH
+67 >        IMM               8
+68 >        MUL 
+69 >        ADD 
+70 >        PUSH
+71 >        SCAN
+72 >        ADJ               2
+73 >        JMP               0x20BF16A4B70
+74 >        LEA               -3
+75 >        PUSH
+76 >        LI  
+77 >        PUSH
+78 >        IMM               1
+79 >        ADD 
+80 >        SI  
+81 >        JMP               0x20BF16A4B10
+82 >        LEA               -3
+83 >        LI  
+84 >        PUSH
+85 >        LEA               -1
+86 >        LI  
+87 >        LT  
+88 >        JNZ               0x20BF16A4BC8
+89 >        IMM               2250320375928
+90 >        PUSH
+91 >        LEA               -2
+92 >        LI  
+93 >        PUSH
+94 >        LEA               -3
+95 >        LI  
+96 >        PUSH
+97 >        IMM               8
+98 >        MUL 
+99 >        ADD 
+100 >        PUSH
+101 >        SCAN
+102 >        ADJ               2
+103 >        JMP               0x20BF16A4B70
+104 >        LEA               -3
+105 >        PUSH
+106 >        LI  
+107 >        PUSH
+108 >        IMM               1
+109 >        ADD 
+110 >        SI  
+111 >        JMP               0x20BF16A4B10
+112 >        LEA               -3
+113 >        LI  
+114 >        PUSH
+115 >        LEA               -1
+116 >        LI  
+117 >        LT  
+118 >        JNZ               0x20BF16A4BC8
+119 >        IMM               2250320375928
+120 >        PUSH
+121 >        LEA               -2
+122 >        LI  
+123 >        PUSH
+124 >        LEA               -3
+125 >        LI  
+126 >        PUSH
+127 >        IMM               8
+128 >        MUL 
+129 >        ADD 
+130 >        PUSH
+131 >        SCAN
+132 >        ADJ               2
+133 >        JMP               0x20BF16A4B70
+134 >        LEA               -3
+135 >        PUSH
+136 >        LI  
+137 >        PUSH
+138 >        IMM               1
+139 >        ADD 
+140 >        SI  
+141 >        JMP               0x20BF16A4B10
+142 >        LEA               -3
+143 >        LI  
+144 >        PUSH
+145 >        LEA               -1
+146 >        LI  
+147 >        LT  
+148 >        JNZ               0x20BF16A4BC8
+149 >        IMM               2250320375928
+150 >        PUSH
+151 >        LEA               -2
+152 >        LI  
+153 >        PUSH
+154 >        LEA               -3
+155 >        LI  
+156 >        PUSH
+157 >        IMM               8
+158 >        MUL 
+159 >        ADD 
+160 >        PUSH
+161 >        SCAN
+162 >        ADJ               2
+163 >        JMP               0x20BF16A4B70
+164 >        LEA               -3
+165 >        PUSH
+166 >        LI  
+167 >        PUSH
+168 >        IMM               1
+169 >        ADD 
+170 >        SI  
+171 >        JMP               0x20BF16A4B10
+172 >        LEA               -3
+173 >        LI  
+174 >        PUSH
+175 >        LEA               -1
+176 >        LI  
+177 >        LT  
+178 >        JNZ               0x20BF16A4BC8
+179 >        IMM               2250320375928
+180 >        PUSH
+181 >        LEA               -2
+182 >        LI  
+183 >        PUSH
+184 >        LEA               -3
+185 >        LI  
+186 >        PUSH
+187 >        IMM               8
+188 >        MUL 
+189 >        ADD 
+190 >        PUSH
+191 >        SCAN
+192 >        ADJ               2
+193 >        JMP               0x20BF16A4B70
+194 >        LEA               -3
+195 >        PUSH
+196 >        LI  
+197 >        PUSH
+198 >        IMM               1
+199 >        ADD 
+200 >        SI  
+201 >        JMP               0x20BF16A4B10
+202 >        LEA               -3
+203 >        LI  
+204 >        PUSH
+205 >        LEA               -1
+206 >        LI  
+207 >        LT  
+208 >        JNZ               0x20BF16A4BC8
+209 >        IMM               2250320375928
+210 >        PUSH
+211 >        LEA               -2
+212 >        LI  
+213 >        PUSH
+214 >        LEA               -3
+215 >        LI  
+216 >        PUSH
+217 >        IMM               8
+218 >        MUL 
+219 >        ADD 
+220 >        PUSH
+221 >        SCAN
+222 >        ADJ               2
+223 >        JMP               0x20BF16A4B70
+224 >        LEA               -3
+225 >        PUSH
+226 >        LI  
+227 >        PUSH
+228 >        IMM               1
+229 >        ADD 
+230 >        SI  
+231 >        JMP               0x20BF16A4B10
+232 >        LEA               -3
+233 >        LI  
+234 >        PUSH
+235 >        LEA               -1
+236 >        LI  
+237 >        LT  
+238 >        JNZ               0x20BF16A4BC8
+239 >        JMP               0x20BF16A4C70
+240 >        LEA               -2
+241 >        LI  
+242 >        PUSH
+243 >        IMM               0
+244 >        PUSH
+245 >        LEA               -1
+246 >        LI  
+247 >        PUSH
+248 >        IMM               1
+249 >        SUB 
+250 >        PUSH
+251 >        JSR               0x20BF16A4158
+252 >        ENT               3
+253 >        LEA               3
+254 >        LI  
+255 >        PUSH
+256 >        LEA               2
+257 >        LI  
+258 >        GE  
+259 >        JZ                0x20BF16A41C0
+260 >        LEA               -1
+261 >        PUSH
+262 >        LEA               3
+263 >        LI  
+264 >        SI  
+265 >        LEA               -2
+266 >        PUSH
+267 >        LEA               2
+268 >        LI  
+269 >        SI  
+270 >        LEA               -3
+271 >        PUSH
+272 >        LEA               3
+273 >        LI  
+274 >        SI  
+275 >        LEA               -1
+276 >        LI  
+277 >        PUSH
+278 >        LEA               -2
+279 >        LI  
+280 >        LT  
+281 >        JZ                0x20BF16A47A8
+282 >        LEA               -1
+283 >        LI  
+284 >        PUSH
+285 >        LEA               -2
+286 >        LI  
+287 >        LT  
+288 >        JZ                0x20BF16A4418
+289 >        LEA               4
+290 >        LI  
+291 >        PUSH
+292 >        LEA               -2
+293 >        LI  
+294 >        PUSH
+295 >        IMM               8
+296 >        MUL 
+297 >        ADD 
+298 >        LI  
+299 >        PUSH
+300 >        LEA               4
+301 >        LI  
+302 >        PUSH
+303 >        LEA               -3
+304 >        LI  
+305 >        PUSH
+306 >        IMM               8
+307 >        MUL 
+308 >        ADD 
+309 >        LI  
+310 >        GE  
+311 >        JZ                0x20BF16A4418
+312 >        IMM               1
+313 >        JMP               0x20BF16A4428
+314 >        JZ                0x20BF16A44B0
+315 >        LEA               -2
+316 >        PUSH
+317 >        LI  
+318 >        PUSH
+319 >        IMM               1
+320 >        SUB 
+321 >        SI  
+322 >        PUSH
+323 >        IMM               1
+324 >        ADD 
+325 >        JMP               0x20BF16A42B8
+326 >        LEA               -1
+327 >        LI  
+328 >        PUSH
+329 >        LEA               -2
+330 >        LI  
+331 >        LT  
+332 >        JZ                0x20BF16A4418
+333 >        LEA               4
+334 >        LI  
+335 >        PUSH
+336 >        LEA               -2
+337 >        LI  
+338 >        PUSH
+339 >        IMM               8
+340 >        MUL 
+341 >        ADD 
+342 >        LI  
+343 >        PUSH
+344 >        LEA               4
+345 >        LI  
+346 >        PUSH
+347 >        LEA               -3
+348 >        LI  
+349 >        PUSH
+350 >        IMM               8
+351 >        MUL 
+352 >        ADD 
+353 >        LI  
+354 >        GE  
+355 >        JZ                0x20BF16A4418
+356 >        IMM               1
+357 >        JMP               0x20BF16A4428
+358 >        JZ                0x20BF16A44B0
+359 >        LEA               -2
+360 >        PUSH
+361 >        LI  
+362 >        PUSH
+363 >        IMM               1
+364 >        SUB 
+365 >        SI  
+366 >        PUSH
+367 >        IMM               1
+368 >        ADD 
+369 >        JMP               0x20BF16A42B8
+370 >        LEA               -1
+371 >        LI  
+372 >        PUSH
+373 >        LEA               -2
+374 >        LI  
+375 >        LT  
+376 >        JZ                0x20BF16A4418
+377 >        LEA               4
+378 >        LI  
+379 >        PUSH
+380 >        LEA               -2
+381 >        LI  
+382 >        PUSH
+383 >        IMM               8
+384 >        MUL 
+385 >        ADD 
+386 >        LI  
+387 >        PUSH
+388 >        LEA               4
+389 >        LI  
+390 >        PUSH
+391 >        LEA               -3
+392 >        LI  
+393 >        PUSH
+394 >        IMM               8
+395 >        MUL 
+396 >        ADD 
+397 >        LI  
+398 >        GE  
+399 >        JZ                0x20BF16A4418
+400 >        IMM               1
+401 >        JMP               0x20BF16A4428
+402 >        JZ                0x20BF16A44B0
+403 >        LEA               -2
+404 >        PUSH
+405 >        LI  
+406 >        PUSH
+407 >        IMM               1
+408 >        SUB 
+409 >        SI  
+410 >        PUSH
+411 >        IMM               1
+412 >        ADD 
+413 >        JMP               0x20BF16A42B8
+414 >        LEA               -1
+415 >        LI  
+416 >        PUSH
+417 >        LEA               -2
+418 >        LI  
+419 >        LT  
+420 >        JZ                0x20BF16A4418
+421 >        LEA               4
+422 >        LI  
+423 >        PUSH
+424 >        LEA               -2
+425 >        LI  
+426 >        PUSH
+427 >        IMM               8
+428 >        MUL 
+429 >        ADD 
+430 >        LI  
+431 >        PUSH
+432 >        LEA               4
+433 >        LI  
+434 >        PUSH
+435 >        LEA               -3
+436 >        LI  
+437 >        PUSH
+438 >        IMM               8
+439 >        MUL 
+440 >        ADD 
+441 >        LI  
+442 >        GE  
+443 >        JZ                0x20BF16A4418
+444 >        IMM               1
+445 >        JMP               0x20BF16A4428
+446 >        JZ                0x20BF16A44B0
+447 >        LEA               -2
+448 >        PUSH
+449 >        LI  
+450 >        PUSH
+451 >        IMM               1
+452 >        SUB 
+453 >        SI  
+454 >        PUSH
+455 >        IMM               1
+456 >        ADD 
+457 >        JMP               0x20BF16A42B8
+458 >        LEA               -1
+459 >        LI  
+460 >        PUSH
+461 >        LEA               -2
+462 >        LI  
+463 >        LT  
+464 >        JZ                0x20BF16A4418
+465 >        LEA               4
+466 >        LI  
+467 >        PUSH
+468 >        LEA               -2
+469 >        LI  
+470 >        PUSH
+471 >        IMM               8
+472 >        MUL 
+473 >        ADD 
+474 >        LI  
+475 >        PUSH
+476 >        LEA               4
+477 >        LI  
+478 >        PUSH
+479 >        LEA               -3
+480 >        LI  
+481 >        PUSH
+482 >        IMM               8
+483 >        MUL 
+484 >        ADD 
+485 >        LI  
+486 >        GE  
+487 >        JZ                0x20BF16A4418
+488 >        IMM               1
+489 >        JMP               0x20BF16A4428
+490 >        JZ                0x20BF16A44B0
+491 >        LEA               -2
+492 >        PUSH
+493 >        LI  
+494 >        PUSH
+495 >        IMM               1
+496 >        SUB 
+497 >        SI  
+498 >        PUSH
+499 >        IMM               1
+500 >        ADD 
+501 >        JMP               0x20BF16A42B8
+502 >        LEA               -1
+503 >        LI  
+504 >        PUSH
+505 >        LEA               -2
+506 >        LI  
+507 >        LT  
+508 >        JZ                0x20BF16A4418
+509 >        LEA               4
+510 >        LI  
+511 >        PUSH
+512 >        LEA               -2
+513 >        LI  
+514 >        PUSH
+515 >        IMM               8
+516 >        MUL 
+517 >        ADD 
+518 >        LI  
+519 >        PUSH
+520 >        LEA               4
+521 >        LI  
+522 >        PUSH
+523 >        LEA               -3
+524 >        LI  
+525 >        PUSH
+526 >        IMM               8
+527 >        MUL 
+528 >        ADD 
+529 >        LI  
+530 >        GE  
+531 >        JZ                0x20BF16A4418
+532 >        IMM               1
+533 >        JMP               0x20BF16A4428
+534 >        JZ                0x20BF16A44B0
+535 >        LEA               -2
+536 >        PUSH
+537 >        LI  
+538 >        PUSH
+539 >        IMM               1
+540 >        SUB 
+541 >        SI  
+542 >        PUSH
+543 >        IMM               1
+544 >        ADD 
+545 >        JMP               0x20BF16A42B8
+546 >        LEA               -1
+547 >        LI  
+548 >        PUSH
+549 >        LEA               -2
+550 >        LI  
+551 >        LT  
+552 >        JZ                0x20BF16A4418
+553 >        IMM               0
+554 >        JZ                0x20BF16A44B0
+555 >        LEA               -1
+556 >        LI  
+557 >        PUSH
+558 >        LEA               -2
+559 >        LI  
+560 >        LT  
+561 >        JZ                0x20BF16A4610
+562 >        IMM               0
+563 >        JZ                0x20BF16A46A8
+564 >        LEA               4
+565 >        LI  
+566 >        PUSH
+567 >        LEA               -2
+568 >        LI  
+569 >        PUSH
+570 >        IMM               8
+571 >        MUL 
+572 >        ADD 
+573 >        PUSH
+574 >        LEA               4
+575 >        LI  
+576 >        PUSH
+577 >        LEA               -1
+578 >        LI  
+579 >        PUSH
+580 >        IMM               8
+581 >        MUL 
+582 >        ADD 
+583 >        PUSH
+584 >        JSR               0x20BF16A4078
+585 >        ENT               1
+586 >        LEA               -1
+587 >        PUSH
+588 >        LEA               3
+589 >        LI  
+590 >        LI  
+591 >        SI  
+592 >        LEA               3
+593 >        LI  
+594 >        PUSH
+595 >        LEA               2
+596 >        LI  
+597 >        LI  
+598 >        SI  
+599 >        LEA               2
+600 >        LI  
+601 >        PUSH
+602 >        LEA               -1
+603 >        LI  
+604 >        SI  
+605 >        LEV 
+606 >        ADJ               2
+607 >        JMP               0x20BF16A4268
+608 >        LEA               -1
+609 >        LI  
+610 >        PUSH
+611 >        LEA               -2
+612 >        LI  
+613 >        LT  
+614 >        JZ                0x20BF16A47A8
+615 >        LEA               4
+616 >        LI  
+617 >        PUSH
+618 >        LEA               -3
+619 >        LI  
+620 >        PUSH
+621 >        IMM               8
+622 >        MUL 
+623 >        ADD 
+624 >        PUSH
+625 >        LEA               4
+626 >        LI  
+627 >        PUSH
+628 >        LEA               -1
+629 >        LI  
+630 >        PUSH
+631 >        IMM               8
+632 >        MUL 
+633 >        ADD 
+634 >        PUSH
+635 >        JSR               0x20BF16A4078
+636 >        ENT               1
+637 >        LEA               -1
+638 >        PUSH
+639 >        LEA               3
+640 >        LI  
+641 >        LI  
+642 >        SI  
+643 >        LEA               3
+644 >        LI  
+645 >        PUSH
+646 >        LEA               2
+647 >        LI  
+648 >        LI  
+649 >        SI  
+650 >        LEA               2
+651 >        LI  
+652 >        PUSH
+653 >        LEA               -1
+654 >        LI  
+655 >        SI  
+656 >        LEV 
+657 >        ADJ               2
+658 >        LEA               -3
+659 >        PUSH
+660 >        LEA               -1
+661 >        LI  
+662 >        SI  
+663 >        LEA               4
+664 >        LI  
+665 >        PUSH
+666 >        LEA               3
+667 >        LI  
+668 >        PUSH
+669 >        LEA               -3
+670 >        LI  
+671 >        PUSH
+672 >        IMM               1
+673 >        SUB 
+674 >        PUSH
+675 >        JSR               0x20BF16A4158
+676 >        ENT               3
+677 >        LEA               3
+678 >        LI  
+679 >        PUSH
+680 >        LEA               2
+681 >        LI  
+682 >        GE  
+683 >        JZ                0x20BF16A41C0
+684 >        LEV 
+685 >        ADJ               3
+686 >        LEA               4
+687 >        LI  
+688 >        PUSH
+689 >        LEA               -3
+690 >        LI  
+691 >        PUSH
+692 >        IMM               1
+693 >        ADD 
+694 >        PUSH
+695 >        LEA               2
+696 >        LI  
+697 >        PUSH
+698 >        JSR               0x20BF16A4158
+699 >        ENT               3
+700 >        LEA               3
+701 >        LI  
+702 >        PUSH
+703 >        LEA               2
+704 >        LI  
+705 >        GE  
+706 >        JZ                0x20BF16A41C0
+707 >        LEA               -1
+708 >        PUSH
+709 >        LEA               3
+710 >        LI  
+711 >        SI  
+712 >        LEA               -2
+713 >        PUSH
+714 >        LEA               2
+715 >        LI  
+716 >        SI  
+717 >        LEA               -3
+718 >        PUSH
+719 >        LEA               3
+720 >        LI  
+721 >        SI  
+722 >        LEA               -1
+723 >        LI  
+724 >        PUSH
+725 >        LEA               -2
+726 >        LI  
+727 >        LT  
+728 >        JZ                0x20BF16A47A8
+729 >        LEA               -1
+730 >        LI  
+731 >        PUSH
+732 >        LEA               -2
+733 >        LI  
+734 >        LT  
+735 >        JZ                0x20BF16A4418
+736 >        LEA               4
+737 >        LI  
+738 >        PUSH
+739 >        LEA               -2
+740 >        LI  
+741 >        PUSH
+742 >        IMM               8
+743 >        MUL 
+744 >        ADD 
+745 >        LI  
+746 >        PUSH
+747 >        LEA               4
+748 >        LI  
+749 >        PUSH
+750 >        LEA               -3
+751 >        LI  
+752 >        PUSH
+753 >        IMM               8
+754 >        MUL 
+755 >        ADD 
+756 >        LI  
+757 >        GE  
+758 >        JZ                0x20BF16A4418
+759 >        IMM               1
+760 >        JMP               0x20BF16A4428
+761 >        JZ                0x20BF16A44B0
+762 >        LEA               -2
+763 >        PUSH
+764 >        LI  
+765 >        PUSH
+766 >        IMM               1
+767 >        SUB 
+768 >        SI  
+769 >        PUSH
+770 >        IMM               1
+771 >        ADD 
+772 >        JMP               0x20BF16A42B8
+773 >        LEA               -1
+774 >        LI  
+775 >        PUSH
+776 >        LEA               -2
+777 >        LI  
+778 >        LT  
+779 >        JZ                0x20BF16A4418
+780 >        LEA               4
+781 >        LI  
+782 >        PUSH
+783 >        LEA               -2
+784 >        LI  
+785 >        PUSH
+786 >        IMM               8
+787 >        MUL 
+788 >        ADD 
+789 >        LI  
+790 >        PUSH
+791 >        LEA               4
+792 >        LI  
+793 >        PUSH
+794 >        LEA               -3
+795 >        LI  
+796 >        PUSH
+797 >        IMM               8
+798 >        MUL 
+799 >        ADD 
+800 >        LI  
+801 >        GE  
+802 >        JZ                0x20BF16A4418
+803 >        IMM               1
+804 >        JMP               0x20BF16A4428
+805 >        JZ                0x20BF16A44B0
+806 >        LEA               -2
+807 >        PUSH
+808 >        LI  
+809 >        PUSH
+810 >        IMM               1
+811 >        SUB 
+812 >        SI  
+813 >        PUSH
+814 >        IMM               1
+815 >        ADD 
+816 >        JMP               0x20BF16A42B8
+817 >        LEA               -1
+818 >        LI  
+819 >        PUSH
+820 >        LEA               -2
+821 >        LI  
+822 >        LT  
+823 >        JZ                0x20BF16A4418
+824 >        LEA               4
+825 >        LI  
+826 >        PUSH
+827 >        LEA               -2
+828 >        LI  
+829 >        PUSH
+830 >        IMM               8
+831 >        MUL 
+832 >        ADD 
+833 >        LI  
+834 >        PUSH
+835 >        LEA               4
+836 >        LI  
+837 >        PUSH
+838 >        LEA               -3
+839 >        LI  
+840 >        PUSH
+841 >        IMM               8
+842 >        MUL 
+843 >        ADD 
+844 >        LI  
+845 >        GE  
+846 >        JZ                0x20BF16A4418
+847 >        IMM               1
+848 >        JMP               0x20BF16A4428
+849 >        JZ                0x20BF16A44B0
+850 >        LEA               -2
+851 >        PUSH
+852 >        LI  
+853 >        PUSH
+854 >        IMM               1
+855 >        SUB 
+856 >        SI  
+857 >        PUSH
+858 >        IMM               1
+859 >        ADD 
+860 >        JMP               0x20BF16A42B8
+861 >        LEA               -1
+862 >        LI  
+863 >        PUSH
+864 >        LEA               -2
+865 >        LI  
+866 >        LT  
+867 >        JZ                0x20BF16A4418
+868 >        LEA               4
+869 >        LI  
+870 >        PUSH
+871 >        LEA               -2
+872 >        LI  
+873 >        PUSH
+874 >        IMM               8
+875 >        MUL 
+876 >        ADD 
+877 >        LI  
+878 >        PUSH
+879 >        LEA               4
+880 >        LI  
+881 >        PUSH
+882 >        LEA               -3
+883 >        LI  
+884 >        PUSH
+885 >        IMM               8
+886 >        MUL 
+887 >        ADD 
+888 >        LI  
+889 >        GE  
+890 >        JZ                0x20BF16A4418
+891 >        IMM               1
+892 >        JMP               0x20BF16A4428
+893 >        JZ                0x20BF16A44B0
+894 >        LEA               -2
+895 >        PUSH
+896 >        LI  
+897 >        PUSH
+898 >        IMM               1
+899 >        SUB 
+900 >        SI  
+901 >        PUSH
+902 >        IMM               1
+903 >        ADD 
+904 >        JMP               0x20BF16A42B8
+905 >        LEA               -1
+906 >        LI  
+907 >        PUSH
+908 >        LEA               -2
+909 >        LI  
+910 >        LT  
+911 >        JZ                0x20BF16A4418
+912 >        LEA               4
+913 >        LI  
+914 >        PUSH
+915 >        LEA               -2
+916 >        LI  
+917 >        PUSH
+918 >        IMM               8
+919 >        MUL 
+920 >        ADD 
+921 >        LI  
+922 >        PUSH
+923 >        LEA               4
+924 >        LI  
+925 >        PUSH
+926 >        LEA               -3
+927 >        LI  
+928 >        PUSH
+929 >        IMM               8
+930 >        MUL 
+931 >        ADD 
+932 >        LI  
+933 >        GE  
+934 >        JZ                0x20BF16A4418
+935 >        IMM               1
+936 >        JMP               0x20BF16A4428
+937 >        JZ                0x20BF16A44B0
+938 >        LEA               -2
+939 >        PUSH
+940 >        LI  
+941 >        PUSH
+942 >        IMM               1
+943 >        SUB 
+944 >        SI  
+945 >        PUSH
+946 >        IMM               1
+947 >        ADD 
+948 >        JMP               0x20BF16A42B8
+949 >        LEA               -1
+950 >        LI  
+951 >        PUSH
+952 >        LEA               -2
+953 >        LI  
+954 >        LT  
+955 >        JZ                0x20BF16A4418
+956 >        IMM               0
+957 >        JZ                0x20BF16A44B0
+958 >        LEA               -1
+959 >        LI  
+960 >        PUSH
+961 >        LEA               -2
+962 >        LI  
+963 >        LT  
+964 >        JZ                0x20BF16A4610
+965 >        IMM               0
+966 >        JZ                0x20BF16A46A8
+967 >        LEA               4
+968 >        LI  
+969 >        PUSH
+970 >        LEA               -2
+971 >        LI  
+972 >        PUSH
+973 >        IMM               8
+974 >        MUL 
+975 >        ADD 
+976 >        PUSH
+977 >        LEA               4
+978 >        LI  
+979 >        PUSH
+980 >        LEA               -1
+981 >        LI  
+982 >        PUSH
+983 >        IMM               8
+984 >        MUL 
+985 >        ADD 
+986 >        PUSH
+987 >        JSR               0x20BF16A4078
+988 >        ENT               1
+989 >        LEA               -1
+990 >        PUSH
+991 >        LEA               3
+992 >        LI  
+993 >        LI  
+994 >        SI  
+995 >        LEA               3
+996 >        LI  
+997 >        PUSH
+998 >        LEA               2
+999 >        LI  
+1000 >        LI  
+1001 >        SI  
+1002 >        LEA               2
+1003 >        LI  
+1004 >        PUSH
+1005 >        LEA               -1
+1006 >        LI  
+1007 >        SI  
+1008 >        LEV 
+1009 >        ADJ               2
+1010 >        JMP               0x20BF16A4268
+1011 >        LEA               -1
+1012 >        LI  
+1013 >        PUSH
+1014 >        LEA               -2
+1015 >        LI  
+1016 >        LT  
+1017 >        JZ                0x20BF16A47A8
+1018 >        LEA               4
+1019 >        LI  
+1020 >        PUSH
+1021 >        LEA               -3
+1022 >        LI  
+1023 >        PUSH
+1024 >        IMM               8
+1025 >        MUL 
+1026 >        ADD 
+1027 >        PUSH
+1028 >        LEA               4
+1029 >        LI  
+1030 >        PUSH
+1031 >        LEA               -1
+1032 >        LI  
+1033 >        PUSH
+1034 >        IMM               8
+1035 >        MUL 
+1036 >        ADD 
+1037 >        PUSH
+1038 >        JSR               0x20BF16A4078
+1039 >        ENT               1
+1040 >        LEA               -1
+1041 >        PUSH
+1042 >        LEA               3
+1043 >        LI  
+1044 >        LI  
+1045 >        SI  
+1046 >        LEA               3
+1047 >        LI  
+1048 >        PUSH
+1049 >        LEA               2
+1050 >        LI  
+1051 >        LI  
+1052 >        SI  
+1053 >        LEA               2
+1054 >        LI  
+1055 >        PUSH
+1056 >        LEA               -1
+1057 >        LI  
+1058 >        SI  
+1059 >        LEV 
+1060 >        ADJ               2
+1061 >        LEA               -3
+1062 >        PUSH
+1063 >        LEA               -1
+1064 >        LI  
+1065 >        SI  
+1066 >        LEA               4
+1067 >        LI  
+1068 >        PUSH
+1069 >        LEA               3
+1070 >        LI  
+1071 >        PUSH
+1072 >        LEA               -3
+1073 >        LI  
+1074 >        PUSH
+1075 >        IMM               1
+1076 >        SUB 
+1077 >        PUSH
+1078 >        JSR               0x20BF16A4158
+1079 >        ENT               3
+1080 >        LEA               3
+1081 >        LI  
+1082 >        PUSH
+1083 >        LEA               2
+1084 >        LI  
+1085 >        GE  
+1086 >        JZ                0x20BF16A41C0
+1087 >        LEV 
+1088 >        ADJ               3
+1089 >        LEA               4
+1090 >        LI  
+1091 >        PUSH
+1092 >        LEA               -3
+1093 >        LI  
+1094 >        PUSH
+1095 >        IMM               1
+1096 >        ADD 
+1097 >        PUSH
+1098 >        LEA               2
+1099 >        LI  
+1100 >        PUSH
+1101 >        JSR               0x20BF16A4158
+1102 >        ENT               3
+1103 >        LEA               3
+1104 >        LI  
+1105 >        PUSH
+1106 >        LEA               2
+1107 >        LI  
+1108 >        GE  
+1109 >        JZ                0x20BF16A41C0
+1110 >        LEA               -1
+1111 >        PUSH
+1112 >        LEA               3
+1113 >        LI  
+1114 >        SI  
+1115 >        LEA               -2
+1116 >        PUSH
+1117 >        LEA               2
+1118 >        LI  
+1119 >        SI  
+1120 >        LEA               -3
+1121 >        PUSH
+1122 >        LEA               3
+1123 >        LI  
+1124 >        SI  
+1125 >        LEA               -1
+1126 >        LI  
+1127 >        PUSH
+1128 >        LEA               -2
+1129 >        LI  
+1130 >        LT  
+1131 >        JZ                0x20BF16A47A8
+1132 >        LEA               -1
+1133 >        LI  
+1134 >        PUSH
+1135 >        LEA               -2
+1136 >        LI  
+1137 >        LT  
+1138 >        JZ                0x20BF16A4418
+1139 >        LEA               4
+1140 >        LI  
+1141 >        PUSH
+1142 >        LEA               -2
+1143 >        LI  
+1144 >        PUSH
+1145 >        IMM               8
+1146 >        MUL 
+1147 >        ADD 
+1148 >        LI  
+1149 >        PUSH
+1150 >        LEA               4
+1151 >        LI  
+1152 >        PUSH
+1153 >        LEA               -3
+1154 >        LI  
+1155 >        PUSH
+1156 >        IMM               8
+1157 >        MUL 
+1158 >        ADD 
+1159 >        LI  
+1160 >        GE  
+1161 >        JZ                0x20BF16A4418
+1162 >        IMM               1
+1163 >        JMP               0x20BF16A4428
+1164 >        JZ                0x20BF16A44B0
+1165 >        LEA               -2
+1166 >        PUSH
+1167 >        LI  
+1168 >        PUSH
+1169 >        IMM               1
+1170 >        SUB 
+1171 >        SI  
+1172 >        PUSH
+1173 >        IMM               1
+1174 >        ADD 
+1175 >        JMP               0x20BF16A42B8
+1176 >        LEA               -1
+1177 >        LI  
+1178 >        PUSH
+1179 >        LEA               -2
+1180 >        LI  
+1181 >        LT  
+1182 >        JZ                0x20BF16A4418
+1183 >        LEA               4
+1184 >        LI  
+1185 >        PUSH
+1186 >        LEA               -2
+1187 >        LI  
+1188 >        PUSH
+1189 >        IMM               8
+1190 >        MUL 
+1191 >        ADD 
+1192 >        LI  
+1193 >        PUSH
+1194 >        LEA               4
+1195 >        LI  
+1196 >        PUSH
+1197 >        LEA               -3
+1198 >        LI  
+1199 >        PUSH
+1200 >        IMM               8
+1201 >        MUL 
+1202 >        ADD 
+1203 >        LI  
+1204 >        GE  
+1205 >        JZ                0x20BF16A4418
+1206 >        IMM               0
+1207 >        JZ                0x20BF16A44B0
+1208 >        LEA               -1
+1209 >        LI  
+1210 >        PUSH
+1211 >        LEA               -2
+1212 >        LI  
+1213 >        LT  
+1214 >        JZ                0x20BF16A4610
+1215 >        LEA               4
+1216 >        LI  
+1217 >        PUSH
+1218 >        LEA               -1
+1219 >        LI  
+1220 >        PUSH
+1221 >        IMM               8
+1222 >        MUL 
+1223 >        ADD 
+1224 >        LI  
+1225 >        PUSH
+1226 >        LEA               4
+1227 >        LI  
+1228 >        PUSH
+1229 >        LEA               -3
+1230 >        LI  
+1231 >        PUSH
+1232 >        IMM               8
+1233 >        MUL 
+1234 >        ADD 
+1235 >        LI  
+1236 >        LE  
+1237 >        JZ                0x20BF16A4610
+1238 >        IMM               1
+1239 >        JMP               0x20BF16A4620
+1240 >        JZ                0x20BF16A46A8
+1241 >        LEA               -1
+1242 >        PUSH
+1243 >        LI  
+1244 >        PUSH
+1245 >        IMM               1
+1246 >        ADD 
+1247 >        SI  
+1248 >        PUSH
+1249 >        IMM               1
+1250 >        SUB 
+1251 >        JMP               0x20BF16A44B0
+1252 >        LEA               -1
+1253 >        LI  
+1254 >        PUSH
+1255 >        LEA               -2
+1256 >        LI  
+1257 >        LT  
+1258 >        JZ                0x20BF16A4610
+1259 >        LEA               4
+1260 >        LI  
+1261 >        PUSH
+1262 >        LEA               -1
+1263 >        LI  
+1264 >        PUSH
+1265 >        IMM               8
+1266 >        MUL 
+1267 >        ADD 
+1268 >        LI  
+1269 >        PUSH
+1270 >        LEA               4
+1271 >        LI  
+1272 >        PUSH
+1273 >        LEA               -3
+1274 >        LI  
+1275 >        PUSH
+1276 >        IMM               8
+1277 >        MUL 
+1278 >        ADD 
+1279 >        LI  
+1280 >        LE  
+1281 >        JZ                0x20BF16A4610
+1282 >        IMM               1
+1283 >        JMP               0x20BF16A4620
+1284 >        JZ                0x20BF16A46A8
+1285 >        LEA               -1
+1286 >        PUSH
+1287 >        LI  
+1288 >        PUSH
+1289 >        IMM               1
+1290 >        ADD 
+1291 >        SI  
+1292 >        PUSH
+1293 >        IMM               1
+1294 >        SUB 
+1295 >        JMP               0x20BF16A44B0
+1296 >        LEA               -1
+1297 >        LI  
+1298 >        PUSH
+1299 >        LEA               -2
+1300 >        LI  
+1301 >        LT  
+1302 >        JZ                0x20BF16A4610
+1303 >        LEA               4
+1304 >        LI  
+1305 >        PUSH
+1306 >        LEA               -1
+1307 >        LI  
+1308 >        PUSH
+1309 >        IMM               8
+1310 >        MUL 
+1311 >        ADD 
+1312 >        LI  
+1313 >        PUSH
+1314 >        LEA               4
+1315 >        LI  
+1316 >        PUSH
+1317 >        LEA               -3
+1318 >        LI  
+1319 >        PUSH
+1320 >        IMM               8
+1321 >        MUL 
+1322 >        ADD 
+1323 >        LI  
+1324 >        LE  
+1325 >        JZ                0x20BF16A4610
+1326 >        IMM               1
+1327 >        JMP               0x20BF16A4620
+1328 >        JZ                0x20BF16A46A8
+1329 >        LEA               -1
+1330 >        PUSH
+1331 >        LI  
+1332 >        PUSH
+1333 >        IMM               1
+1334 >        ADD 
+1335 >        SI  
+1336 >        PUSH
+1337 >        IMM               1
+1338 >        SUB 
+1339 >        JMP               0x20BF16A44B0
+1340 >        LEA               -1
+1341 >        LI  
+1342 >        PUSH
+1343 >        LEA               -2
+1344 >        LI  
+1345 >        LT  
+1346 >        JZ                0x20BF16A4610
+1347 >        IMM               0
+1348 >        JZ                0x20BF16A46A8
+1349 >        LEA               4
+1350 >        LI  
+1351 >        PUSH
+1352 >        LEA               -2
+1353 >        LI  
+1354 >        PUSH
+1355 >        IMM               8
+1356 >        MUL 
+1357 >        ADD 
+1358 >        PUSH
+1359 >        LEA               4
+1360 >        LI  
+1361 >        PUSH
+1362 >        LEA               -1
+1363 >        LI  
+1364 >        PUSH
+1365 >        IMM               8
+1366 >        MUL 
+1367 >        ADD 
+1368 >        PUSH
+1369 >        JSR               0x20BF16A4078
+1370 >        ENT               1
+1371 >        LEA               -1
+1372 >        PUSH
+1373 >        LEA               3
+1374 >        LI  
+1375 >        LI  
+1376 >        SI  
+1377 >        LEA               3
+1378 >        LI  
+1379 >        PUSH
+1380 >        LEA               2
+1381 >        LI  
+1382 >        LI  
+1383 >        SI  
+1384 >        LEA               2
+1385 >        LI  
+1386 >        PUSH
+1387 >        LEA               -1
+1388 >        LI  
+1389 >        SI  
+1390 >        LEV 
+1391 >        ADJ               2
+1392 >        JMP               0x20BF16A4268
+1393 >        LEA               -1
+1394 >        LI  
+1395 >        PUSH
+1396 >        LEA               -2
+1397 >        LI  
+1398 >        LT  
+1399 >        JZ                0x20BF16A47A8
+1400 >        LEA               4
+1401 >        LI  
+1402 >        PUSH
+1403 >        LEA               -3
+1404 >        LI  
+1405 >        PUSH
+1406 >        IMM               8
+1407 >        MUL 
+1408 >        ADD 
+1409 >        PUSH
+1410 >        LEA               4
+1411 >        LI  
+1412 >        PUSH
+1413 >        LEA               -1
+1414 >        LI  
+1415 >        PUSH
+1416 >        IMM               8
+1417 >        MUL 
+1418 >        ADD 
+1419 >        PUSH
+1420 >        JSR               0x20BF16A4078
+1421 >        ENT               1
+1422 >        LEA               -1
+1423 >        PUSH
+1424 >        LEA               3
+1425 >        LI  
+1426 >        LI  
+1427 >        SI  
+1428 >        LEA               3
+1429 >        LI  
+1430 >        PUSH
+1431 >        LEA               2
+1432 >        LI  
+1433 >        LI  
+1434 >        SI  
+1435 >        LEA               2
+1436 >        LI  
+1437 >        PUSH
+1438 >        LEA               -1
+1439 >        LI  
+1440 >        SI  
+1441 >        LEV 
+1442 >        ADJ               2
+1443 >        LEA               -3
+1444 >        PUSH
+1445 >        LEA               -1
+1446 >        LI  
+1447 >        SI  
+1448 >        LEA               4
+1449 >        LI  
+1450 >        PUSH
+1451 >        LEA               3
+1452 >        LI  
+1453 >        PUSH
+1454 >        LEA               -3
+1455 >        LI  
+1456 >        PUSH
+1457 >        IMM               1
+1458 >        SUB 
+1459 >        PUSH
+1460 >        JSR               0x20BF16A4158
+1461 >        ENT               3
+1462 >        LEA               3
+1463 >        LI  
+1464 >        PUSH
+1465 >        LEA               2
+1466 >        LI  
+1467 >        GE  
+1468 >        JZ                0x20BF16A41C0
+1469 >        LEA               -1
+1470 >        PUSH
+1471 >        LEA               3
+1472 >        LI  
+1473 >        SI  
+1474 >        LEA               -2
+1475 >        PUSH
+1476 >        LEA               2
+1477 >        LI  
+1478 >        SI  
+1479 >        LEA               -3
+1480 >        PUSH
+1481 >        LEA               3
+1482 >        LI  
+1483 >        SI  
+1484 >        LEA               -1
+1485 >        LI  
+1486 >        PUSH
+1487 >        LEA               -2
+1488 >        LI  
+1489 >        LT  
+1490 >        JZ                0x20BF16A47A8
+1491 >        LEA               -1
+1492 >        LI  
+1493 >        PUSH
+1494 >        LEA               -2
+1495 >        LI  
+1496 >        LT  
+1497 >        JZ                0x20BF16A4418
+1498 >        LEA               4
+1499 >        LI  
+1500 >        PUSH
+1501 >        LEA               -2
+1502 >        LI  
+1503 >        PUSH
+1504 >        IMM               8
+1505 >        MUL 
+1506 >        ADD 
+1507 >        LI  
+1508 >        PUSH
+1509 >        LEA               4
+1510 >        LI  
+1511 >        PUSH
+1512 >        LEA               -3
+1513 >        LI  
+1514 >        PUSH
+1515 >        IMM               8
+1516 >        MUL 
+1517 >        ADD 
+1518 >        LI  
+1519 >        GE  
+1520 >        JZ                0x20BF16A4418
+1521 >        IMM               0
+1522 >        JZ                0x20BF16A44B0
+1523 >        LEA               -1
+1524 >        LI  
+1525 >        PUSH
+1526 >        LEA               -2
+1527 >        LI  
+1528 >        LT  
+1529 >        JZ                0x20BF16A4610
+1530 >        LEA               4
+1531 >        LI  
+1532 >        PUSH
+1533 >        LEA               -1
+1534 >        LI  
+1535 >        PUSH
+1536 >        IMM               8
+1537 >        MUL 
+1538 >        ADD 
+1539 >        LI  
+1540 >        PUSH
+1541 >        LEA               4
+1542 >        LI  
+1543 >        PUSH
+1544 >        LEA               -3
+1545 >        LI  
+1546 >        PUSH
+1547 >        IMM               8
+1548 >        MUL 
+1549 >        ADD 
+1550 >        LI  
+1551 >        LE  
+1552 >        JZ                0x20BF16A4610
+1553 >        IMM               1
+1554 >        JMP               0x20BF16A4620
+1555 >        JZ                0x20BF16A46A8
+1556 >        LEA               -1
+1557 >        PUSH
+1558 >        LI  
+1559 >        PUSH
+1560 >        IMM               1
+1561 >        ADD 
+1562 >        SI  
+1563 >        PUSH
+1564 >        IMM               1
+1565 >        SUB 
+1566 >        JMP               0x20BF16A44B0
+1567 >        LEA               -1
+1568 >        LI  
+1569 >        PUSH
+1570 >        LEA               -2
+1571 >        LI  
+1572 >        LT  
+1573 >        JZ                0x20BF16A4610
+1574 >        LEA               4
+1575 >        LI  
+1576 >        PUSH
+1577 >        LEA               -1
+1578 >        LI  
+1579 >        PUSH
+1580 >        IMM               8
+1581 >        MUL 
+1582 >        ADD 
+1583 >        LI  
+1584 >        PUSH
+1585 >        LEA               4
+1586 >        LI  
+1587 >        PUSH
+1588 >        LEA               -3
+1589 >        LI  
+1590 >        PUSH
+1591 >        IMM               8
+1592 >        MUL 
+1593 >        ADD 
+1594 >        LI  
+1595 >        LE  
+1596 >        JZ                0x20BF16A4610
+1597 >        IMM               1
+1598 >        JMP               0x20BF16A4620
+1599 >        JZ                0x20BF16A46A8
+1600 >        LEA               -1
+1601 >        PUSH
+1602 >        LI  
+1603 >        PUSH
+1604 >        IMM               1
+1605 >        ADD 
+1606 >        SI  
+1607 >        PUSH
+1608 >        IMM               1
+1609 >        SUB 
+1610 >        JMP               0x20BF16A44B0
+1611 >        LEA               -1
+1612 >        LI  
+1613 >        PUSH
+1614 >        LEA               -2
+1615 >        LI  
+1616 >        LT  
+1617 >        JZ                0x20BF16A4610
+1618 >        IMM               0
+1619 >        JZ                0x20BF16A46A8
+1620 >        LEA               4
+1621 >        LI  
+1622 >        PUSH
+1623 >        LEA               -2
+1624 >        LI  
+1625 >        PUSH
+1626 >        IMM               8
+1627 >        MUL 
+1628 >        ADD 
+1629 >        PUSH
+1630 >        LEA               4
+1631 >        LI  
+1632 >        PUSH
+1633 >        LEA               -1
+1634 >        LI  
+1635 >        PUSH
+1636 >        IMM               8
+1637 >        MUL 
+1638 >        ADD 
+1639 >        PUSH
+1640 >        JSR               0x20BF16A4078
+1641 >        ENT               1
+1642 >        LEA               -1
+1643 >        PUSH
+1644 >        LEA               3
+1645 >        LI  
+1646 >        LI  
+1647 >        SI  
+1648 >        LEA               3
+1649 >        LI  
+1650 >        PUSH
+1651 >        LEA               2
+1652 >        LI  
+1653 >        LI  
+1654 >        SI  
+1655 >        LEA               2
+1656 >        LI  
+1657 >        PUSH
+1658 >        LEA               -1
+1659 >        LI  
+1660 >        SI  
+1661 >        LEV 
+1662 >        ADJ               2
+1663 >        JMP               0x20BF16A4268
+1664 >        LEA               -1
+1665 >        LI  
+1666 >        PUSH
+1667 >        LEA               -2
+1668 >        LI  
+1669 >        LT  
+1670 >        JZ                0x20BF16A47A8
+1671 >        LEA               4
+1672 >        LI  
+1673 >        PUSH
+1674 >        LEA               -3
+1675 >        LI  
+1676 >        PUSH
+1677 >        IMM               8
+1678 >        MUL 
+1679 >        ADD 
+1680 >        PUSH
+1681 >        LEA               4
+1682 >        LI  
+1683 >        PUSH
+1684 >        LEA               -1
+1685 >        LI  
+1686 >        PUSH
+1687 >        IMM               8
+1688 >        MUL 
+1689 >        ADD 
+1690 >        PUSH
+1691 >        JSR               0x20BF16A4078
+1692 >        ENT               1
+1693 >        LEA               -1
+1694 >        PUSH
+1695 >        LEA               3
+1696 >        LI  
+1697 >        LI  
+1698 >        SI  
+1699 >        LEA               3
+1700 >        LI  
+1701 >        PUSH
+1702 >        LEA               2
+1703 >        LI  
+1704 >        LI  
+1705 >        SI  
+1706 >        LEA               2
+1707 >        LI  
+1708 >        PUSH
+1709 >        LEA               -1
+1710 >        LI  
+1711 >        SI  
+1712 >        LEV 
+1713 >        ADJ               2
+1714 >        LEA               -3
+1715 >        PUSH
+1716 >        LEA               -1
+1717 >        LI  
+1718 >        SI  
+1719 >        LEA               4
+1720 >        LI  
+1721 >        PUSH
+1722 >        LEA               3
+1723 >        LI  
+1724 >        PUSH
+1725 >        LEA               -3
+1726 >        LI  
+1727 >        PUSH
+1728 >        IMM               1
+1729 >        SUB 
+1730 >        PUSH
+1731 >        JSR               0x20BF16A4158
+1732 >        ENT               3
+1733 >        LEA               3
+1734 >        LI  
+1735 >        PUSH
+1736 >        LEA               2
+1737 >        LI  
+1738 >        GE  
+1739 >        JZ                0x20BF16A41C0
+1740 >        LEA               -1
+1741 >        PUSH
+1742 >        LEA               3
+1743 >        LI  
+1744 >        SI  
+1745 >        LEA               -2
+1746 >        PUSH
+1747 >        LEA               2
+1748 >        LI  
+1749 >        SI  
+1750 >        LEA               -3
+1751 >        PUSH
+1752 >        LEA               3
+1753 >        LI  
+1754 >        SI  
+1755 >        LEA               -1
+1756 >        LI  
+1757 >        PUSH
+1758 >        LEA               -2
+1759 >        LI  
+1760 >        LT  
+1761 >        JZ                0x20BF16A47A8
+1762 >        LEA               -1
+1763 >        LI  
+1764 >        PUSH
+1765 >        LEA               -2
+1766 >        LI  
+1767 >        LT  
+1768 >        JZ                0x20BF16A4418
+1769 >        LEA               4
+1770 >        LI  
+1771 >        PUSH
+1772 >        LEA               -2
+1773 >        LI  
+1774 >        PUSH
+1775 >        IMM               8
+1776 >        MUL 
+1777 >        ADD 
+1778 >        LI  
+1779 >        PUSH
+1780 >        LEA               4
+1781 >        LI  
+1782 >        PUSH
+1783 >        LEA               -3
+1784 >        LI  
+1785 >        PUSH
+1786 >        IMM               8
+1787 >        MUL 
+1788 >        ADD 
+1789 >        LI  
+1790 >        GE  
+1791 >        JZ                0x20BF16A4418
+1792 >        IMM               0
+1793 >        JZ                0x20BF16A44B0
+1794 >        LEA               -1
+1795 >        LI  
+1796 >        PUSH
+1797 >        LEA               -2
+1798 >        LI  
+1799 >        LT  
+1800 >        JZ                0x20BF16A4610
+1801 >        LEA               4
+1802 >        LI  
+1803 >        PUSH
+1804 >        LEA               -1
+1805 >        LI  
+1806 >        PUSH
+1807 >        IMM               8
+1808 >        MUL 
+1809 >        ADD 
+1810 >        LI  
+1811 >        PUSH
+1812 >        LEA               4
+1813 >        LI  
+1814 >        PUSH
+1815 >        LEA               -3
+1816 >        LI  
+1817 >        PUSH
+1818 >        IMM               8
+1819 >        MUL 
+1820 >        ADD 
+1821 >        LI  
+1822 >        LE  
+1823 >        JZ                0x20BF16A4610
+1824 >        IMM               1
+1825 >        JMP               0x20BF16A4620
+1826 >        JZ                0x20BF16A46A8
+1827 >        LEA               -1
+1828 >        PUSH
+1829 >        LI  
+1830 >        PUSH
+1831 >        IMM               1
+1832 >        ADD 
+1833 >        SI  
+1834 >        PUSH
+1835 >        IMM               1
+1836 >        SUB 
+1837 >        JMP               0x20BF16A44B0
+1838 >        LEA               -1
+1839 >        LI  
+1840 >        PUSH
+1841 >        LEA               -2
+1842 >        LI  
+1843 >        LT  
+1844 >        JZ                0x20BF16A4610
+1845 >        IMM               0
+1846 >        JZ                0x20BF16A46A8
+1847 >        LEA               4
+1848 >        LI  
+1849 >        PUSH
+1850 >        LEA               -2
+1851 >        LI  
+1852 >        PUSH
+1853 >        IMM               8
+1854 >        MUL 
+1855 >        ADD 
+1856 >        PUSH
+1857 >        LEA               4
+1858 >        LI  
+1859 >        PUSH
+1860 >        LEA               -1
+1861 >        LI  
+1862 >        PUSH
+1863 >        IMM               8
+1864 >        MUL 
+1865 >        ADD 
+1866 >        PUSH
+1867 >        JSR               0x20BF16A4078
+1868 >        ENT               1
+1869 >        LEA               -1
+1870 >        PUSH
+1871 >        LEA               3
+1872 >        LI  
+1873 >        LI  
+1874 >        SI  
+1875 >        LEA               3
+1876 >        LI  
+1877 >        PUSH
+1878 >        LEA               2
+1879 >        LI  
+1880 >        LI  
+1881 >        SI  
+1882 >        LEA               2
+1883 >        LI  
+1884 >        PUSH
+1885 >        LEA               -1
+1886 >        LI  
+1887 >        SI  
+1888 >        LEV 
+1889 >        ADJ               2
+1890 >        JMP               0x20BF16A4268
+1891 >        LEA               -1
+1892 >        LI  
+1893 >        PUSH
+1894 >        LEA               -2
+1895 >        LI  
+1896 >        LT  
+1897 >        JZ                0x20BF16A47A8
+1898 >        LEA               4
+1899 >        LI  
+1900 >        PUSH
+1901 >        LEA               -3
+1902 >        LI  
+1903 >        PUSH
+1904 >        IMM               8
+1905 >        MUL 
+1906 >        ADD 
+1907 >        PUSH
+1908 >        LEA               4
+1909 >        LI  
+1910 >        PUSH
+1911 >        LEA               -1
+1912 >        LI  
+1913 >        PUSH
+1914 >        IMM               8
+1915 >        MUL 
+1916 >        ADD 
+1917 >        PUSH
+1918 >        JSR               0x20BF16A4078
+1919 >        ENT               1
+1920 >        LEA               -1
+1921 >        PUSH
+1922 >        LEA               3
+1923 >        LI  
+1924 >        LI  
+1925 >        SI  
+1926 >        LEA               3
+1927 >        LI  
+1928 >        PUSH
+1929 >        LEA               2
+1930 >        LI  
+1931 >        LI  
+1932 >        SI  
+1933 >        LEA               2
+1934 >        LI  
+1935 >        PUSH
+1936 >        LEA               -1
+1937 >        LI  
+1938 >        SI  
+1939 >        LEV 
+1940 >        ADJ               2
+1941 >        LEA               -3
+1942 >        PUSH
+1943 >        LEA               -1
+1944 >        LI  
+1945 >        SI  
+1946 >        LEA               4
+1947 >        LI  
+1948 >        PUSH
+1949 >        LEA               3
+1950 >        LI  
+1951 >        PUSH
+1952 >        LEA               -3
+1953 >        LI  
+1954 >        PUSH
+1955 >        IMM               1
+1956 >        SUB 
+1957 >        PUSH
+1958 >        JSR               0x20BF16A4158
+1959 >        ENT               3
+1960 >        LEA               3
+1961 >        LI  
+1962 >        PUSH
+1963 >        LEA               2
+1964 >        LI  
+1965 >        GE  
+1966 >        JZ                0x20BF16A41C0
+1967 >        LEV 
+1968 >        ADJ               3
+1969 >        LEA               4
+1970 >        LI  
+1971 >        PUSH
+1972 >        LEA               -3
+1973 >        LI  
+1974 >        PUSH
+1975 >        IMM               1
+1976 >        ADD 
+1977 >        PUSH
+1978 >        LEA               2
+1979 >        LI  
+1980 >        PUSH
+1981 >        JSR               0x20BF16A4158
+1982 >        ENT               3
+1983 >        LEA               3
+1984 >        LI  
+1985 >        PUSH
+1986 >        LEA               2
+1987 >        LI  
+1988 >        GE  
+1989 >        JZ                0x20BF16A41C0
+1990 >        LEV 
+1991 >        ADJ               3
+1992 >        LEV 
+1993 >        ADJ               3
+1994 >        LEA               4
+1995 >        LI  
+1996 >        PUSH
+1997 >        LEA               -3
+1998 >        LI  
+1999 >        PUSH
+2000 >        IMM               1
+2001 >        ADD 
+2002 >        PUSH
+2003 >        LEA               2
+2004 >        LI  
+2005 >        PUSH
+2006 >        JSR               0x20BF16A4158
+2007 >        ENT               3
+2008 >        LEA               3
+2009 >        LI  
+2010 >        PUSH
+2011 >        LEA               2
+2012 >        LI  
+2013 >        GE  
+2014 >        JZ                0x20BF16A41C0
+2015 >        LEV 
+2016 >        ADJ               3
+2017 >        LEV 
+2018 >        ADJ               3
+2019 >        LEA               4
+2020 >        LI  
+2021 >        PUSH
+2022 >        LEA               -3
+2023 >        LI  
+2024 >        PUSH
+2025 >        IMM               1
+2026 >        ADD 
+2027 >        PUSH
+2028 >        LEA               2
+2029 >        LI  
+2030 >        PUSH
+2031 >        JSR               0x20BF16A4158
+2032 >        ENT               3
+2033 >        LEA               3
+2034 >        LI  
+2035 >        PUSH
+2036 >        LEA               2
+2037 >        LI  
+2038 >        GE  
+2039 >        JZ                0x20BF16A41C0
+2040 >        LEV 
+2041 >        ADJ               3
+2042 >        LEV 
+2043 >        ADJ               3
+2044 >        LEV 
+2045 >        ADJ               3
+2046 >        LEV 
+2047 >        ADJ               3
+2048 >        LEA               -3
+2049 >        PUSH
+2050 >        IMM               0
+2051 >        SI  
+2052 >        LEA               -3
+2053 >        LI  
+2054 >        PUSH
+2055 >        LEA               -1
+2056 >        LI  
+2057 >        LT  
+2058 >        JNZ               0x20BF16A4DF0
+2059 >        IMM               2250320375936
+2060 >        PUSH
+2061 >        LEA               -2
+2062 >        LI  
+2063 >        PUSH
+2064 >        LEA               -3
+2065 >        LI  
+2066 >        PUSH
+2067 >        IMM               8
+2068 >        MUL 
+2069 >        ADD 
+2070 >        LI  
+2071 >        PUSH
+2072 >        PRTF
+2073 >        ADJ               2
+2074 >        JMP               0x20BF16A4D98
+2075 >        LEA               -3
+2076 >        PUSH
+2077 >        LI  
+2078 >        PUSH
+2079 >        IMM               1
+2080 >        ADD 
+2081 >        SI  
+2082 >        JMP               0x20BF16A4D38
+2083 >        LEA               -3
+2084 >        LI  
+2085 >        PUSH
+2086 >        LEA               -1
+2087 >        LI  
+2088 >        LT  
+2089 >        JNZ               0x20BF16A4DF0
+2090 >        IMM               2250320375936
+2091 >        PUSH
+2092 >        LEA               -2
+2093 >        LI  
+2094 >        PUSH
+2095 >        LEA               -3
+2096 >        LI  
+2097 >        PUSH
+2098 >        IMM               8
+2099 >        MUL 
+2100 >        ADD 
+2101 >        LI  
+2102 >        PUSH
+2103 >        PRTF
+2104 >        ADJ               2
+2105 >        JMP               0x20BF16A4D98
+2106 >        LEA               -3
+2107 >        PUSH
+2108 >        LI  
+2109 >        PUSH
+2110 >        IMM               1
+2111 >        ADD 
+2112 >        SI  
+2113 >        JMP               0x20BF16A4D38
+2114 >        LEA               -3
+2115 >        LI  
+2116 >        PUSH
+2117 >        LEA               -1
+2118 >        LI  
+2119 >        LT  
+2120 >        JNZ               0x20BF16A4DF0
+2121 >        IMM               2250320375936
+2122 >        PUSH
+2123 >        LEA               -2
+2124 >        LI  
+2125 >        PUSH
+2126 >        LEA               -3
+2127 >        LI  
+2128 >        PUSH
+2129 >        IMM               8
+2130 >        MUL 
+2131 >        ADD 
+2132 >        LI  
+2133 >        PUSH
+2134 >        PRTF
+2135 >        ADJ               2
+2136 >        JMP               0x20BF16A4D98
+2137 >        LEA               -3
+2138 >        PUSH
+2139 >        LI  
+2140 >        PUSH
+2141 >        IMM               1
+2142 >        ADD 
+2143 >        SI  
+2144 >        JMP               0x20BF16A4D38
+2145 >        LEA               -3
+2146 >        LI  
+2147 >        PUSH
+2148 >        LEA               -1
+2149 >        LI  
+2150 >        LT  
+2151 >        JNZ               0x20BF16A4DF0
+2152 >        IMM               2250320375936
+2153 >        PUSH
+2154 >        LEA               -2
+2155 >        LI  
+2156 >        PUSH
+2157 >        LEA               -3
+2158 >        LI  
+2159 >        PUSH
+2160 >        IMM               8
+2161 >        MUL 
+2162 >        ADD 
+2163 >        LI  
+2164 >        PUSH
+2165 >        PRTF
+2166 >        ADJ               2
+2167 >        JMP               0x20BF16A4D98
+2168 >        LEA               -3
+2169 >        PUSH
+2170 >        LI  
+2171 >        PUSH
+2172 >        IMM               1
+2173 >        ADD 
+2174 >        SI  
+2175 >        JMP               0x20BF16A4D38
+2176 >        LEA               -3
+2177 >        LI  
+2178 >        PUSH
+2179 >        LEA               -1
+2180 >        LI  
+2181 >        LT  
+2182 >        JNZ               0x20BF16A4DF0
+2183 >        IMM               2250320375936
+2184 >        PUSH
+2185 >        LEA               -2
+2186 >        LI  
+2187 >        PUSH
+2188 >        LEA               -3
+2189 >        LI  
+2190 >        PUSH
+2191 >        IMM               8
+2192 >        MUL 
+2193 >        ADD 
+2194 >        LI  
+2195 >        PUSH
+2196 >        PRTF
+2197 >        ADJ               2
+2198 >        JMP               0x20BF16A4D98
+2199 >        LEA               -3
+2200 >        PUSH
+2201 >        LI  
+2202 >        PUSH
+2203 >        IMM               1
+2204 >        ADD 
+2205 >        SI  
+2206 >        JMP               0x20BF16A4D38
+2207 >        LEA               -3
+2208 >        LI  
+2209 >        PUSH
+2210 >        LEA               -1
+2211 >        LI  
+2212 >        LT  
+2213 >        JNZ               0x20BF16A4DF0
+2214 >        IMM               2250320375936
+2215 >        PUSH
+2216 >        LEA               -2
+2217 >        LI  
+2218 >        PUSH
+2219 >        LEA               -3
+2220 >        LI  
+2221 >        PUSH
+2222 >        IMM               8
+2223 >        MUL 
+2224 >        ADD 
+2225 >        LI  
+2226 >        PUSH
+2227 >        PRTF
+2228 >        ADJ               2
+2229 >        JMP               0x20BF16A4D98
+2230 >        LEA               -3
+2231 >        PUSH
+2232 >        LI  
+2233 >        PUSH
+2234 >        IMM               1
+2235 >        ADD 
+2236 >        SI  
+2237 >        JMP               0x20BF16A4D38
+2238 >        LEA               -3
+2239 >        LI  
+2240 >        PUSH
+2241 >        LEA               -1
+2242 >        LI  
+2243 >        LT  
+2244 >        JNZ               0x20BF16A4DF0
+2245 >        IMM               2250320375936
+2246 >        PUSH
+2247 >        LEA               -2
+2248 >        LI  
+2249 >        PUSH
+2250 >        LEA               -3
+2251 >        LI  
+2252 >        PUSH
+2253 >        IMM               8
+2254 >        MUL 
+2255 >        ADD 
+2256 >        LI  
+2257 >        PUSH
+2258 >        PRTF
+2259 >        ADJ               2
+2260 >        JMP               0x20BF16A4D98
+2261 >        LEA               -3
+2262 >        PUSH
+2263 >        LI  
+2264 >        PUSH
+2265 >        IMM               1
+2266 >        ADD 
+2267 >        SI  
+2268 >        JMP               0x20BF16A4D38
+2269 >        LEA               -3
+2270 >        LI  
+2271 >        PUSH
+2272 >        LEA               -1
+2273 >        LI  
+2274 >        LT  
+2275 >        JNZ               0x20BF16A4DF0
+2276 >        JMP               0x20BF16A4EA0
+2277 >        IMM               2250320375944
+2278 >        PUSH
+2279 >        PRTF
+2280 >        ADJ               1
+2281 >        IMM               0
+2282 >        LEV 
+2283 >        PUSH
+2284 >        EXIT
 

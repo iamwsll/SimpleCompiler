@@ -120,7 +120,7 @@ void Parser::read_src(char** argv)
         std::cout<<"Could not open(%s)"<<*argv<<std::endl;
         std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
     }
-	LOG(DEBUG, "open file %s\n", *argv);
+	LOG(DEBUG, "open file %s\n", open_filename);
     if (!(TokenOp.src = (char*)malloc(poolsize)))
     {
         LOG(FATAL, "Could not malloc(%d) for source code area\n", poolsize);

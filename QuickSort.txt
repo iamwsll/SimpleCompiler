@@ -1,0 +1,53 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<stdlib.h>
+void swap(int* a, int* b)
+{
+    int x;
+     x = *a;
+	*a = *b;
+	*b = x;
+}
+void QuickSort(int* arr, int begin, int end)
+{
+    int left , right , keyi ;
+    if (begin >= end)
+        return;
+     left = begin, right = end, keyi = begin;
+    while (left < right)
+    {
+        while (left < right && arr[right] >= arr[keyi])
+            right--;
+        while (left < right && arr[left] <= arr[keyi])
+            left++;
+        swap(&arr[right], &arr[left]);
+    }
+
+    swap(&arr[keyi], &arr[left]);
+    keyi = left;
+
+    QuickSort(arr, begin, keyi - 1);
+    QuickSort(arr, keyi + 1, end);
+}
+
+int main()
+{
+    int n;
+    int* arr;
+    int i;
+    arr = (int*)malloc(sizeof(int) * 100);
+    scanf("%d", &n);
+    for (i = 0; i < n; ++i)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+     QuickSort(arr, 0, n - 1);
+
+    for (i = 0; i < n; ++i)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}

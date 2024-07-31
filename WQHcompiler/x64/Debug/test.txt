@@ -1,7 +1,24 @@
-int main()
+#include<stdio.h>
+void Complex_Expretion()
 {
 	int x;
-	x=((((5>6?5:6)*5+7)/3)+5&&6&&7+5||6&&(!7))*(5+6*7);
- printf("%d\n",x);
-return 0;
+    int a, b, c, result;
+	a = 5;
+	b = 6;
+	c = 7;
+	x = ((((5 > 6 ? 5 : 6) * 5 + 7) / 3) + 5 && 6 && 7 + 5 || 6 && (!7)) * (5 + 6 * 7);
+	printf("The value of x is %d\n", x);   
+        result = a + b * c > 15 ? (b | a) : (c & a);
+       // result += a % b << 2;
+        result ^= c;
+        result--;
+        result == 0 || a != b && (c >= 3 || a <= 8);
+
+        printf("结果是: %d\n", result);
+        return 0;
+}
+int main()
+{
+    Complex_Expretion();
+    return 0;
 }
