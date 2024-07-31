@@ -1,40 +1,77 @@
-
 line 1:
-     0x15C57080070:           0
+     0x2D09A720070: invl          0
+line 4:
+     0x2D09A720078: ENT           1
+     0x2D09A720088: LEA           -1
+     0x2D09A720098: PUSH
+     0x2D09A7200A0: IMM           5
+     0x2D09A7200B0: PUSH
+     0x2D09A7200B8: IMM           6
+     0x2D09A7200C8: GT  
+     0x2D09A7200D0: JZ            0x2D09A720100
+     0x2D09A7200E0: IMM           5
+     0x2D09A7200F0: JMP           0x2D09A720110
+     0x2D09A720100: IMM           6
+     0x2D09A720110: PUSH
+     0x2D09A720118: IMM           5
+     0x2D09A720128: MUL 
+     0x2D09A720130: PUSH
+     0x2D09A720138: IMM           7
+     0x2D09A720148: ADD 
+     0x2D09A720150: PUSH
+     0x2D09A720158: IMM           3
+     0x2D09A720168: DIV 
+     0x2D09A720170: PUSH
+     0x2D09A720178: IMM           5
+     0x2D09A720188: ADD 
+     0x2D09A720190: JZ            0x2D09A7201E0
+     0x2D09A7201A0: IMM           6
+     0x2D09A7201B0: JZ            0x2D09A7201E0
+     0x2D09A7201C0: IMM           1
+     0x2D09A7201D0: JMP           0x2D09A7201F0
+     0x2D09A7201E0: IMM           0
+     0x2D09A7201F0: JZ            0x2D09A720260
+     0x2D09A720200: IMM           7
+     0x2D09A720210: PUSH
+     0x2D09A720218: IMM           5
+     0x2D09A720228: ADD 
+     0x2D09A720230: JZ            0x2D09A720260
+     0x2D09A720240: IMM           1
+     0x2D09A720250: JMP           0x2D09A720270
+     0x2D09A720260: IMM           0
+     0x2D09A720270: JNZ           0x2D09A720340
+     0x2D09A720280: IMM           6
+     0x2D09A720290: JZ            0x2D09A720300
+     0x2D09A7202A0: IMM           7
+     0x2D09A7202B0: PUSH
+     0x2D09A7202B8: IMM           0
+     0x2D09A7202C8: EQ  
+     0x2D09A7202D0: JZ            0x2D09A720300
+     0x2D09A7202E0: IMM           1
+     0x2D09A7202F0: JMP           0x2D09A720310
+     0x2D09A720300: IMM           0
+     0x2D09A720310: JNZ           0x2D09A720340
+     0x2D09A720320: IMM           0
+     0x2D09A720330: JMP           0x2D09A720350
+     0x2D09A720340: IMM           1
+     0x2D09A720350: PUSH
+     0x2D09A720358: IMM           5
+     0x2D09A720368: PUSH
+     0x2D09A720370: IMM           6
+     0x2D09A720380: PUSH
+     0x2D09A720388: IMM           7
+     0x2D09A720398: MUL 
+     0x2D09A7203A0: ADD 
+     0x2D09A7203A8: MUL 
+     0x2D09A7203B0: SI  
 line 5:
-     0x15C57080078: ENT           1
-     0x15C57080088: LEA           -1
-     0x15C57080098: PUSH
-     0x15C570800A0: LEA           3
-     0x15C570800B0: LI  
-     0x15C570800B8: PUSH
-     0x15C570800C0: LEA           2
-     0x15C570800D0: LI  
-     0x15C570800D8: ADD 
-     0x15C570800E0: SI  
+     0x2D09A7203B8: IMM           3094969827440
+     0x2D09A7203C8: PUSH
+     0x2D09A7203D0: LEA           -1
+     0x2D09A7203E0: LI  
+     0x2D09A7203E8: PUSH
+     0x2D09A7203F0: PRTF
+     0x2D09A7203F8: ADJ           2
 line 6:
-     0x15C570800E8: LEA           -1
-     0x15C570800F8: LI  
-line 7:
-     0x15C57080100: LEV 
-     0x15C57080108: LEV 
-line 10:
-     0x15C57080110: ENT           0
-     0x15C57080120: IMM           1496110968944
-     0x15C57080130: PUSH
-     0x15C57080138: IMM           1
-     0x15C57080148: PUSH
-     0x15C57080150: IMM           2
-     0x15C57080160: PUSH
-     0x15C57080168: IMM           1
-     0x15C57080178: PUSH
-     0x15C57080180: IMM           2
-     0x15C57080190: PUSH
-     0x15C57080198: JSR           0x15C57080078
-     0x15C570801A8: ADJ           2
-     0x15C570801B8: PUSH
-     0x15C570801C0: PRTF
-     0x15C570801C8: ADJ           4
-line 12:
-     0x15C570801D8: IMM           0
+     0x2D09A720408: IMM           0
 

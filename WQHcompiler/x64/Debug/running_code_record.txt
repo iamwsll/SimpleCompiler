@@ -1,69 +1,58 @@
-
-1 >        ENT               0
-2 >        IMM               1865564323952
+1 >        ENT               1
+2 >        LEA               -1
 3 >        PUSH
-4 >        IMM               1
+4 >        IMM               5
 5 >        PUSH
-6 >        IMM               2
-7 >        PUSH
-8 >        IMM               1
-9 >        PUSH
-10 >        IMM               2
-11 >        PUSH
-12 >        JSR               0x1B25C2B5078
-13 >        ENT               1
-14 >        LEA               -1
-15 >        PUSH
-16 >        LEA               3
-17 >        LI  
-18 >        PUSH
-19 >        LEA               2
-20 >        LI  
+6 >        IMM               6
+7 >        GT  
+8 >        JZ                0x2D09A720100
+9 >        IMM               6
+10 >        PUSH
+11 >        IMM               5
+12 >        MUL 
+13 >        PUSH
+14 >        IMM               7
+15 >        ADD 
+16 >        PUSH
+17 >        IMM               3
+18 >        DIV 
+19 >        PUSH
+20 >        IMM               5
 21 >        ADD 
-22 >        SI  
-23 >        LEA               -1
-24 >        LI  
-25 >        LEV 
-26 >        ADJ               2
-27 >        PUSH
-28 >        PRTF
-29 >        ADJ               4
-30 >        IMM               0
-31 >        LEV 
-32 >        PUSH
-33 >        EXIT
-
-1 >        ENT               0
-2 >        IMM               1496110968944
-3 >        PUSH
-4 >        IMM               1
-5 >        PUSH
-6 >        IMM               2
-7 >        PUSH
-8 >        IMM               1
-9 >        PUSH
-10 >        IMM               2
-11 >        PUSH
-12 >        JSR               0x15C57080078
-13 >        ENT               1
-14 >        LEA               -1
-15 >        PUSH
-16 >        LEA               3
-17 >        LI  
-18 >        PUSH
-19 >        LEA               2
-20 >        LI  
-21 >        ADD 
-22 >        SI  
-23 >        LEA               -1
-24 >        LI  
-25 >        LEV 
-26 >        ADJ               2
-27 >        PUSH
-28 >        PRTF
-29 >        ADJ               4
-30 >        IMM               0
-31 >        LEV 
-32 >        PUSH
-33 >        EXIT
+22 >        JZ                0x2D09A7201E0
+23 >        IMM               6
+24 >        JZ                0x2D09A7201E0
+25 >        IMM               1
+26 >        JMP               0x2D09A7201F0
+27 >        JZ                0x2D09A720260
+28 >        IMM               7
+29 >        PUSH
+30 >        IMM               5
+31 >        ADD 
+32 >        JZ                0x2D09A720260
+33 >        IMM               1
+34 >        JMP               0x2D09A720270
+35 >        JNZ               0x2D09A720340
+36 >        IMM               1
+37 >        PUSH
+38 >        IMM               5
+39 >        PUSH
+40 >        IMM               6
+41 >        PUSH
+42 >        IMM               7
+43 >        MUL 
+44 >        ADD 
+45 >        MUL 
+46 >        SI  
+47 >        IMM               3094969827440
+48 >        PUSH
+49 >        LEA               -1
+50 >        LI  
+51 >        PUSH
+52 >        PRTF
+53 >        ADJ               2
+54 >        IMM               0
+55 >        LEV 
+56 >        PUSH
+57 >        EXIT
 

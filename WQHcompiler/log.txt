@@ -101,3 +101,15 @@ open file C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHc
 [2024-7-31 0:4:23][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][146] 
 exit(0), running 18 codes 
 
+[2024-7-31 13:4:8][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHcompiler.exe
+[2024-7-31 13:4:14][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHcompiler.exe
+[2024-7-31 13:4:19][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][146] 
+exit(0), running 18 codes 
+
+[2024-7-31 13:10:59][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHcompiler.exe
+[2024-7-31 13:11:2][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][146] 
+exit(0), running 18 codes 
+

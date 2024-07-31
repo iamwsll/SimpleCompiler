@@ -839,23 +839,47 @@ void StateMent::expression(long long level)
             *addr = (long long)(_parserptr->TokenOp._testVM.code + 1);
         }
         // ||
-        else if (_parserptr->TokenOp.token == Lor)
+        else if (_parserptr->TokenOp.token == Lor)//addr是记录短路求值后应该跳转的位置。addr_true记录右操作数决定的最终表达式为true的情况.addr_flase同理
         {
+            long long* addr_flase;
+            long long* addr_true;
             _parserptr->TokenOp.match(Lor);
             *++_parserptr->TokenOp._testVM.code = JNZ;  // 短路求值，如果已经为true，则直接跳到下一个，多个||表达式则会一直跳到末尾
             addr = ++_parserptr->TokenOp._testVM.code;
             expression(Land);
+            *++_parserptr->TokenOp._testVM.code = JNZ;
+            addr_true = ++_parserptr->TokenOp._testVM.code;
+            *++_parserptr->TokenOp._testVM.code = IMM;
+            *++_parserptr->TokenOp._testVM.code = 0;
+            *++_parserptr->TokenOp._testVM.code = JMP;
+            addr_flase = ++_parserptr->TokenOp._testVM.code;
             *addr = (long long)(_parserptr->TokenOp._testVM.code + 1);
+            *addr_true = (long long)(_parserptr->TokenOp._testVM.code + 1);
+            *++_parserptr->TokenOp._testVM.code = IMM;
+            *++_parserptr->TokenOp._testVM.code = 1;
+            *addr_flase = (long long)(_parserptr->TokenOp._testVM.code + 1);
             _parserptr->expr_type = INT;
         }
         // &&
         else if (_parserptr->TokenOp.token == Land)
         {
+            long long* addr_flase;
+            long long* addr_true;
             _parserptr->TokenOp.match(Land);
             *++_parserptr->TokenOp._testVM.code = JZ;   // 短路求值，如果已经为false，则直接跳到下一个，多个&&表达式则会一直跳到末尾
             addr = ++_parserptr->TokenOp._testVM.code;
             expression(Or);
+            *++_parserptr->TokenOp._testVM.code = JZ;
+            addr_flase = ++_parserptr->TokenOp._testVM.code;
+            *++_parserptr->TokenOp._testVM.code = IMM;
+            *++_parserptr->TokenOp._testVM.code = 1;
+			*++_parserptr->TokenOp._testVM.code = JMP;
+            addr_true = ++_parserptr->TokenOp._testVM.code;
             *addr = (long long)(_parserptr->TokenOp._testVM.code + 1);
+			*addr_flase = (long long)(_parserptr->TokenOp._testVM.code + 1);
+            *++_parserptr->TokenOp._testVM.code = IMM;
+            *++_parserptr->TokenOp._testVM.code = 0;
+			*addr_true = (long long)(_parserptr->TokenOp._testVM.code + 1);
             _parserptr->expr_type = INT;
         }
         // |
