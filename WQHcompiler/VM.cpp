@@ -46,9 +46,6 @@ void VM::init_run_VM(Parser* parserptr,int argc, char** argv)
     *--sp = (long long)tmpp;  // 返回地址，然后开始执行PUSH和EXIT
 
 }
-VM::~VM()
-{
-}
 long long VM::run_vm()
 {
     // 获取起始时间点
@@ -60,25 +57,29 @@ long long VM::run_vm()
     {
         op = *pc++;
         cycle++;//这个是记录跑了几条代码
-        if (debug == 1)
+        if (debug == 1)//多线程打印信息
         {
-            if (file_record != NULL) 
-            {
-                fprintf(file_record, "%lld >        %.4s", cycle, &"LEA ,IMM ,JMP ,JSR ,JZ  ,JNZ ,ENT ,ADJ ,LEV ,LI  ,LC  ,SI  ,SC  ,PUSH,"
-                    "OR  ,XOR ,AND ,EQ  ,NE  ,LT  ,GT  ,LE  ,GE  ,SHL ,SHR ,ADD ,SUB ,MUL ,DIV ,MOD ,"
-                    "OPEN,READ,CLOS,WRIT,PRTF,SCAN,MALC,FREE,MSET,MCMP,MCPY,EXIT,"[(op - LEA) * 5]);//这个*5是注意到每个字符（包括逗号）刚好5个字符
-                if (op >= JMP && op <= JNZ)
-                    fprintf(file_record, "              0x%.10llX\n", *pc);
-                else if (op <= ADJ)
-                    fprintf(file_record, "              %lld\n", *pc);
-                else
-                    fprintf(file_record, "\n");
-            }
-            else 
-            {
-                LOG(FATAL,"Error opening file_record");
-				std::cout << "[###] process error! please see in \"log.txt\" !" << std::endl; return(-1);
-            }
+            print_thread = std::thread([&]()
+                {
+                    if (file_record != NULL)
+                    {
+                        fprintf(file_record, "%lld >        %.4s", cycle, &"LEA ,IMM ,JMP ,JSR ,JZ  ,JNZ ,ENT ,ADJ ,LEV ,LI  ,LC  ,SI  ,SC  ,PUSH,"
+                            "OR  ,XOR ,AND ,EQ  ,NE  ,LT  ,GT  ,LE  ,GE  ,SHL ,SHR ,ADD ,SUB ,MUL ,DIV ,MOD ,"
+                            "OPEN,READ,CLOS,WRIT,PRTF,SCAN,MALC,FREE,MSET,MCMP,MCPY,EXIT,"[(op - LEA) * 5]);//这个*5是注意到每个字符（包括逗号）刚好5个字符
+                        if (op >= JMP && op <= JNZ)
+                            fprintf(file_record, "              0x%.10llX\n", *pc);
+                        else if (op <= ADJ)
+                            fprintf(file_record, "              %lld\n", *pc);
+                        else
+                            fprintf(file_record, "\n");
+                    }
+                    else
+                    {
+                        LOG(FATAL, "Error opening file_record");
+                        std::cout << "[###] process error! please see in \"log.txt\" !" << std::endl; return(-1);
+                    }
+                });
+           
         }
 
         // load & store
@@ -145,6 +146,7 @@ long long VM::run_vm()
         else if (op == EXIT) {
             LOG(DEBUG, "exit(%d), running %d codes \n\n", *sp, cycle);
             std::cout << "\n[###] process exit successfully!,return val: " << *sp << std::endl;
+			if (debug == 1)print_thread.join();
             // 获取结束时间点
             auto run_end = std::chrono::high_resolution_clock::now();
 

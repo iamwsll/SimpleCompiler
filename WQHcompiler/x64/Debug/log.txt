@@ -18,3 +18,8 @@ open file QuickSort.txt
 [2024-7-31 17:3:42][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][146] 
 exit(0), running 2284 codes 
 
+[2024-7-31 17:7:29][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file test_basic.txt
+[2024-7-31 17:7:29][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][146] 
+exit(0), running 32581 codes 
+

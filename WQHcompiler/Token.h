@@ -56,7 +56,7 @@ public:
 	long long last_token_val=0; // 支持记录和回溯token流的功能
 	char* last_src=0;     // 支持记录和回溯token流的功能
 	long long last_line=0;      // 支持记录和回溯token流的功能
-    VM _testVM;
+    VM& _testVM;
     FILE* compiler_file;
 public:
     TokensClass(VM& testVM,Parser* parserptr);

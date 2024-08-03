@@ -1,0 +1,14 @@
+[2024-8-3 16:41:28][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file test.txt
+[2024-8-3 16:41:30][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][147] 
+exit(0), running 18 codes 
+
+[2024-8-3 16:42:4][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file test.txt
+[2024-8-3 16:42:4][Error][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\StateMent.cpp][773] 
+13: invalid expression
+[2024-8-3 16:43:28][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file test.txt
+[2024-8-3 16:43:28][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][147] 
+exit(0), running 32581 codes 
+

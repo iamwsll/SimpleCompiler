@@ -3,6 +3,7 @@
 #include<string.h>
 #include<stdio.h>
 #include<stdlib.h>
+#include<thread>
 #include"Log.h"
 class Parser;
 // 指令集，最多一个操作数
@@ -79,9 +80,9 @@ public:
     long long debug = 0;                  // 调试模式
     long long* last_code = nullptr;             // 上一次打印至的code段指针
     long long file_flag = 0;
+	std::thread print_thread;
 public:
 	VM(long long input_poolsize = 2048 * 1024);//2048KB的data stack code区
     void init_run_VM(Parser* parserptr, int argc, char** argv);
-	~VM();
     long long run_vm();
 };
