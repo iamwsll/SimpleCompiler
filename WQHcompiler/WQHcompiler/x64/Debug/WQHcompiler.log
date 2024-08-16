@@ -1,11 +1,11 @@
-﻿  Parser.cpp
+﻿  Log.cpp
+  Parser.cpp
   StateMent.cpp
   Token.cpp
   VM.cpp
-C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp(90,46): warning C4244: “=”: 从“__int64”转换到“char”，可能丢失数据
-C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp(143,71): warning C4244: “参数”: 从“__int64”转换到“int”，可能丢失数据
+C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp(86,46): warning C4244: “=”: 从“__int64”转换到“char”，可能丢失数据
+C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp(139,71): warning C4244: “参数”: 从“__int64”转换到“int”，可能丢失数据
   WQHcompilerMain.cpp
 C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\WQHcompilerMain.cpp(60,25): warning C4244: “return”: 从“__int64”转换到“int32_t”，可能丢失数据
   正在生成代码...
-C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp(81,1): warning C4715: “`VM::run_vm'::`7'::<lambda_1>::operator()”: 不是所有的控件路径都返回值
   WQHcompiler.vcxproj -> C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\x64\Debug\WQHcompiler.exe

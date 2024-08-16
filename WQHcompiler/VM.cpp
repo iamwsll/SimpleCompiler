@@ -57,10 +57,8 @@ long long VM::run_vm()
     {
         op = *pc++;
         cycle++;//这个是记录跑了几条代码
-        if (debug == 1)//多线程打印信息
+        if (debug == 1)//打印信息
         {
-            print_thread = std::thread([&]()
-                {
                     if (file_record != NULL)
                     {
                         fprintf(file_record, "%lld >        %.4s", cycle, &"LEA ,IMM ,JMP ,JSR ,JZ  ,JNZ ,ENT ,ADJ ,LEV ,LI  ,LC  ,SI  ,SC  ,PUSH,"
@@ -78,8 +76,6 @@ long long VM::run_vm()
                         LOG(FATAL, "Error opening file_record");
                         std::cout << "[###] process error! please see in \"log.txt\" !" << std::endl; return(-1);
                     }
-                });
-           
         }
 
         // load & store
@@ -146,7 +142,6 @@ long long VM::run_vm()
         else if (op == EXIT) {
             LOG(DEBUG, "exit(%d), running %d codes \n\n", *sp, cycle);
             std::cout << "\n[###] process exit successfully!,return val: " << *sp << std::endl;
-			if (debug == 1)print_thread.join();
             // 获取结束时间点
             auto run_end = std::chrono::high_resolution_clock::now();
 

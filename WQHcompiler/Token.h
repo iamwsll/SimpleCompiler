@@ -60,7 +60,7 @@ public:
     FILE* compiler_file;
 public:
     TokensClass(VM& testVM,Parser* parserptr);
-    void next();
+    void getToken();
     void match(long long tk);
     ~TokensClass();
 };

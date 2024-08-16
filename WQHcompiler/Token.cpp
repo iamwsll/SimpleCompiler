@@ -6,7 +6,7 @@
 /*
 做词法分析（tokenize/lex）：从源码获取到下一个token，得到这个token的类型和值。
 */
-void TokensClass::next()
+void TokensClass::getToken()
 {
     char* last_pos;
     while (token = *src++)//注意这里src在token前面一位
@@ -210,7 +210,7 @@ void TokensClass::match(long long tk)
     char* tokens;
     if (token == tk)
     {
-        next();
+        getToken();
     }
     else
     {

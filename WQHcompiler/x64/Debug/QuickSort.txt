@@ -35,8 +35,10 @@ int main()
     int n;
     int* arr;
     int i;
-    arr = (int*)malloc(sizeof(int) * 100);
+	printf("The size of array is?\n");
     scanf("%d", &n);
+	   arr = (int*)malloc(sizeof(int) * (n+10));
+	printf("Please input each number:");
     for (i = 0; i < n; ++i)
     {
         scanf("%d", &arr[i]);

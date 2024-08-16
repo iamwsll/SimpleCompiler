@@ -82,7 +82,7 @@ void Parser::init_symbols()
     tmp = Break;
     while (tmp <= While)
     {
-        TokenOp.next();
+        TokenOp.getToken();
         current_id->token = tmp++; // only need token
     }
 
@@ -90,15 +90,15 @@ void Parser::init_symbols()
     tmp = OPEN;
     while (tmp <= EXIT)
     {
-        TokenOp.next();
+        TokenOp.getToken();
         current_id->IdClass = Sys;   // 标识符类型是系统调用
         current_id->type = INT;    // 返回值类型
         current_id->value = tmp++; // 指令
     }
     // void将被视为char处理，main被作为标识符添加到符号表，并使用idmain记录main函数的符号表项
-    TokenOp.next();
+    TokenOp.getToken();
     current_id->token = Char; // void type, regard void as char
-    TokenOp.next();
+    TokenOp.getToken();
     idmain = current_id; // keep track on main
 
 }
@@ -210,7 +210,7 @@ void Parser::parse()
     cur_struct_type = STRUCT;
     cur_union_type = UNION;
 
-    TokenOp.next();
+    TokenOp.getToken();
 	while (TokenOp.token > 0)//token是0，就说明next()的while语句里token = *src++中第一次执行src就是0，也就是说读到了源码的末尾
     {
         global_declaration();
@@ -617,7 +617,7 @@ define_glo_func://跳转到这里，一定是开始了函数定义或者变量定义
             }
         }
     }
-    TokenOp.next(); // ; }
+    TokenOp.getToken(); // ; }
 }
 /*
 解析枚举定义：{}内的内容
@@ -634,7 +634,7 @@ void Parser::enum_body()
             LOG(ERROR, "%d: invalid enum identifier %d\n", TokenOp.line, TokenOp.token);
             std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
         }
-        TokenOp.next();
+        TokenOp.getToken();
         if (TokenOp.token == Assign)
         {
             TokenOp.match(Assign);
@@ -644,7 +644,7 @@ void Parser::enum_body()
                 std::cout<<"[###] process error! please see in \"log.txt\" !"<<std::endl;exit(-1);
             }
             enum_val = TokenOp.token_val;
-            TokenOp.next();
+            TokenOp.getToken();
         }
 
         // 给枚举赋值，视为常量

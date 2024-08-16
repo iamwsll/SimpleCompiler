@@ -3,7 +3,6 @@
 #include<string.h>
 #include<stdio.h>
 #include<stdlib.h>
-#include<thread>
 #include"Log.h"
 class Parser;
 // 指令集，最多一个操作数
@@ -24,9 +23,9 @@ enum Instruction
     // 1个操作数，剩余的都没有操作数
     LEV, //leave subroutine，退出子程序，放在子程序的末尾，将栈帧切换回主调函数，释放子程序中的内存。
 	//具体就是sp跳转到bp的位置，然后bp指向sp上一个位置（也就是返回地址），sp++（指向返回地址），然后pc指向sp位置的内容（返回地址），sp++（来恢复栈桢）
-    LI, //load long long，将内存中的值加载到寄存器ax中。也就是，ax这时候存的是一个指向数据区某个int的指针，LI之后就把ax的值变成int
+    LI, //load int，将内存中的值加载到寄存器ax中。也就是，ax这时候存的是一个指向数据区某个int的指针，LI之后就把ax的值变成int
     LC, //load char
-	SI, // save long long 这时候ax里应该存的是一个int，然后栈顶存储这个int，然后sp++（pop）
+	SI, // save int 这时候ax里应该存的是一个int，然后栈顶存储这个int，然后sp++（pop）
     SC, // save char
 	PUSH,//寄存器ax压到栈顶 sp--，然后把ax的值存到栈顶
 	//算术指令：这些操作都是把ax和栈顶的值进行操作，然后把结果存到ax里面，同时sp++（pop）
@@ -80,7 +79,6 @@ public:
     long long debug = 0;                  // 调试模式
     long long* last_code = nullptr;             // 上一次打印至的code段指针
     long long file_flag = 0;
-	std::thread print_thread;
 public:
 	VM(long long input_poolsize = 2048 * 1024);//2048KB的data stack code区
     void init_run_VM(Parser* parserptr, int argc, char** argv);

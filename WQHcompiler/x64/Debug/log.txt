@@ -23,3 +23,49 @@ open file test_basic.txt
 [2024-7-31 17:7:29][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][146] 
 exit(0), running 32581 codes 
 
+[2024-8-16 17:31:15][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file test.txt
+[2024-8-16 17:31:15][Error][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\StateMent.cpp][773] 
+13: invalid expression
+[2024-8-16 17:31:51][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file test_basic.txt
+[2024-8-16 17:31:51][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][147] 
+exit(0), running 32581 codes 
+
+[2024-8-16 18:25:6][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file QuickSort.txt
+[2024-8-16 18:25:21][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][147] 
+exit(0), running 2174 codes 
+
+[2024-8-16 18:54:17][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file test_basic.txt
+[2024-8-16 18:54:17][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][147] 
+exit(0), running 32581 codes 
+
+[2024-8-16 20:2:7][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file QuickSort.txt
+[2024-8-16 20:2:53][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][147] 
+exit(0), running 2959 codes 
+
+[2024-8-16 21:59:51][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file test_basic.txt
+[2024-8-16 22:1:2][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file test_basic.txt
+[2024-8-16 22:23:42][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file test_basic.txt
+[2024-8-16 22:23:42][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][143] 
+exit(0), running 32581 codes 
+
+[2024-8-16 22:37:14][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file test_basic.txt
+[2024-8-16 22:37:14][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\VM.cpp][143] 
+exit(0), running 32581 codes 
+
+[2024-8-16 22:37:18][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file wrong_code.txt
+[2024-8-16 22:37:18][Error][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\StateMent.cpp][564] 
+4: call undeclared function
+[2024-8-16 22:47:1][Debug][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\Parser.cpp][123] 
+open file wrong_code.txt
+[2024-8-16 22:47:1][Error][C:\my_program\SimpleCompiler\SimpleCompiler\WQHcompiler\StateMent.cpp][564] 
+4: call undeclared function
