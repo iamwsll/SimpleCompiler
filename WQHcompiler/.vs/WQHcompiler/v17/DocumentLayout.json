@@ -67,8 +67,7 @@
               "ViewState": "AQIAAAwAAAAAAAAAAAAAAC8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-28T08:58:16.663Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -95,8 +94,7 @@
               "ViewState": "AQIAAPEAAAAAAAAAAAAAANIAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-28T12:56:29.089Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -112,8 +110,7 @@
               "RelativeToolTip": "StateMent.cpp",
               "ViewState": "AQIAAIsCAAAAAAAAAAAwwLUCAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-28T13:56:32.137Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-28T13:56:32.137Z"
             },
             {
               "$type": "Document",
@@ -125,8 +122,7 @@
               "RelativeToolTip": "VM.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAI8AAABfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-28T13:58:34.457Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-28T13:58:34.457Z"
             },
             {
               "$type": "Document",
@@ -138,8 +134,7 @@
               "RelativeToolTip": "Token.cpp",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-28T12:56:43.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-28T12:56:43.569Z"
             },
             {
               "$type": "Document",
@@ -151,8 +146,7 @@
               "RelativeToolTip": "Token.h",
               "ViewState": "AQIAACUAAAAAAAAAAAAnwDoAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-28T09:46:43.95Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-28T09:46:43.95Z"
             },
             {
               "$type": "Document",
@@ -164,8 +158,7 @@
               "RelativeToolTip": "Log.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-28T17:15:12.702Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-28T17:15:12.702Z"
             },
             {
               "$type": "Document",
@@ -177,8 +170,7 @@
               "RelativeToolTip": "Parser.h",
               "ViewState": "AQIAAFYAAAAAAAAAAAAgwGsAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-28T08:59:03.77Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-28T08:59:03.77Z"
             },
             {
               "$type": "Document",
@@ -202,8 +194,7 @@
               "RelativeToolTip": "Log.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-29T04:45:06.591Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T04:45:06.591Z"
             }
           ]
         }
